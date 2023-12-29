@@ -1,0 +1,22 @@
+.bg-image {
+    background: url('/src/assets/logo.png') right top no-repeat;
+}
+
+/* Соотношение ширины и высоты 3/4 */
+@media (min-width: 768px) {
+    .bg-image {
+        background-size: 225px 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bg-image {
+        background-size: 300px 400px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .bg-image {
+        background-size: 375px 500px;
+    }
+}

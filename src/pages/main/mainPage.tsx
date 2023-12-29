@@ -1,5 +1,13 @@
+import Container from 'ui/container';
+import GreetingSection from './greetingSection';
+import './mainPage.css';
+
 function MainPage() {
-    return <div>Main page</div>;
+    return (
+        <Container>
+            <GreetingSection />
+        </Container>
+    );
 }
 
 export default MainPage;
