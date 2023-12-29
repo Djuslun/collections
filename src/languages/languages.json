@@ -1,6 +1,12 @@
 {
     "en": {
         "translation": {
+            "header": {
+                "nav": {
+                    "homePage": "Home",
+                    "collectionsPage": "Collections"
+                }
+            },
             "mainPage": {
                 "greetingSection": {
                     "title": "Everything that is important to you is in The Collection",
@@ -11,6 +17,12 @@
     },
     "ru": {
         "translation": {
+            "header": {
+                "nav": {
+                    "homePage": "Главная",
+                    "collectionsPage": "Коллекции"
+                }
+            },
             "mainPage": {
                 "greetingSection": {
                     "title": "Все что важно для вас - в The Collection",
