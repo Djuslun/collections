@@ -5,7 +5,10 @@
                 "nav": {
                     "homePage": "Home",
                     "collectionsPage": "Collections"
-                }
+                },
+                "login": "Log in",
+                "logout": "Log out",
+                "profile": "Profile"
             },
             "mainPage": {
                 "greetingSection": {
@@ -21,7 +24,10 @@
                 "nav": {
                     "homePage": "Главная",
                     "collectionsPage": "Коллекции"
-                }
+                },
+                "login": "Войти",
+                "logout": "Выйти",
+                "profile": "Профиль"
             },
             "mainPage": {
                 "greetingSection": {

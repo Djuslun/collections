@@ -1,8 +1,10 @@
 import Logo from 'components/logo/logo';
 import Container from 'ui/container';
+import AuthButton from './authButton/authButton';
 import ColorModeButton from './colorModeButton/colorModeButton';
 import LanguageSwitch from './languageSwitch/languageSwitchButton';
 import Nav from './nav/nav';
+import ProfilePageButton from './profilePageButton/profilePageButton';
 
 function Header() {
     return (
@@ -16,6 +18,10 @@ function Header() {
                     <div className="flex items-center gap-2">
                         <LanguageSwitch />
                         <ColorModeButton />
+                        <div className="gap-2 hidden md:flex">
+                            <AuthButton />
+                            <ProfilePageButton />
+                        </div>
                     </div>
                 </div>
             </Container>
