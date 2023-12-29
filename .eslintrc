@@ -23,7 +23,6 @@
     "project": "./**/tsconfig.json"
   },
   "plugins": ["@typescript-eslint", "import", "react", "prettier"],
-  "ignorePatterns": ["vite.config.ts"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "error",
     "no-underscore-dangle": "off",
@@ -31,6 +30,7 @@
     "import/no-cycle": "off",
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-shadow": "off",
     "no-param-reassign": [
       "error",
       { "props": true, "ignorePropertyModificationsFor": ["state"] }
