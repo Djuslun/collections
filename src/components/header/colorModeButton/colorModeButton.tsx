@@ -1,6 +1,6 @@
-import NightlightIcon from '@mui/icons-material/Nightlight';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import { Button } from '@mui/base';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightlightIcon from '@mui/icons-material/Nightlight';
 import useColorMode from './useColorMode';
 
 function ColorModeButton() {
@@ -9,7 +9,7 @@ function ColorModeButton() {
     return (
         <Button
             onClick={handleChangeMode}
-            className="p-2 border border-gray-300 rounded-md shadow-md shadow-slate-300 dark:border-gray-500 bg-white dark:bg-gray-700"
+            className="p-2 border border-gray-300 rounded-md shadow-sm shadow-slate-300 dark:border-gray-500 bg-white dark:bg-gray-700"
         >
             {mode === 'dark' ? (
                 <LightModeIcon className="text-orange-400" />
