@@ -9,7 +9,7 @@ import ProfilePageButton from './profilePageButton/profilePageButton';
 
 function Header() {
     return (
-        <header className=" bg-slate-200 border-b border-gray-400 shadow-md shadow-slate-400 py-2 dark:bg-gray-800">
+        <header className="bg-main border-b border-gray-400 shadow-md shadow-slate-400 py-2">
             <Container>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">

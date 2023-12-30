@@ -7,10 +7,7 @@ function ColorModeButton() {
     const { mode, handleChangeMode } = useColorMode();
 
     return (
-        <Button
-            onClick={handleChangeMode}
-            className="p-2 border border-gray-300 rounded-md shadow-sm shadow-slate-300 dark:border-gray-500 bg-white dark:bg-gray-700"
-        >
+        <Button onClick={handleChangeMode} className="button border-with-shadow">
             {mode === 'dark' ? (
                 <LightModeIcon className="text-orange-400" />
             ) : (

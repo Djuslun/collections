@@ -8,7 +8,7 @@ function LanguageSwitch() {
     return (
         <Button
             onClick={() => changeLanguage(i18next.language === 'en' ? 'ru' : 'en')}
-            className="p-3 text-[18px] leading-none dark:text-white border border-gray-300 rounded-md shadow-sm shadow-slate-300 dark:border-gray-500 bg-white dark:bg-gray-700"
+            className="text-button button border-with-shadow"
         >
             {language.toUpperCase()}
         </Button>

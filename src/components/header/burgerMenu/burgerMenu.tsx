@@ -11,9 +11,7 @@ function BurgerMenu() {
     const { handleKeyDown, open, setOpen } = useBurgerMenu();
 
     const activeClass = ({ isActive }: { isActive: boolean }): string =>
-        `${
-            isActive ? 'text-blue-600' : ''
-        } text-xl lg:text-2xl p-2 hover:bg-gray-100 dark:hover:bg-gray-700 bg-opacity-50 focus-visible:outline-none focus-visible:border-b border-gray-800 dark:border-gray-100`;
+        `${isActive ? 'text-blue-600' : ''} nav-link burger-menu-link`;
 
     return (
         <div className="md:hidden">
@@ -26,7 +24,7 @@ function BurgerMenu() {
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
             >
-                <div className="dark:bg-gray-800 dark:text-white bg-slate-200 min-h-screen">
+                <div className="bg-main min-h-screen">
                     <nav
                         onClick={() => setOpen(false)}
                         onKeyDown={handleKeyDown}
@@ -41,7 +39,7 @@ function BurgerMenu() {
                         <NavLink className={activeClass} to="/profile">
                             {t('profile')}
                         </NavLink>
-                        <Button className=" text-xl lg:text-2xl p-2 hover:bg-gray-100 dark:hover:bg-gray-700 bg-opacity-50 text-left focus-visible:outline-none focus-visible:border-b border-gray-800 dark:border-gray-100">
+                        <Button className="nav-link burger-menu-link text-left">
                             Log out
                         </Button>
                     </nav>
