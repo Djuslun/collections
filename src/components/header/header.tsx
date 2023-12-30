@@ -1,6 +1,7 @@
 import Logo from 'components/logo/logo';
 import Container from 'ui/container';
 import AuthButton from './authButton/authButton';
+import BurgerMenu from './burgerMenu/burgerMenu';
 import ColorModeButton from './colorModeButton/colorModeButton';
 import LanguageSwitch from './languageSwitch/languageSwitchButton';
 import Nav from './nav/nav';
@@ -22,6 +23,7 @@ function Header() {
                             <AuthButton />
                             <ProfilePageButton />
                         </div>
+                        <BurgerMenu />
                     </div>
                 </div>
             </Container>
