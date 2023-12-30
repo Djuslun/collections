@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { SwipeableDrawer } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+import { ClientUrls } from 'ts/enums';
 import useBurgerMenu from './useBurgerMenu';
 
 function BurgerMenu() {
@@ -30,13 +31,13 @@ function BurgerMenu() {
                         onKeyDown={handleKeyDown}
                         className="w-[250px] flex flex-col"
                     >
-                        <NavLink className={activeClass} to="/">
+                        <NavLink className={activeClass} to={ClientUrls.homePage}>
                             {t('nav.homePage')}
                         </NavLink>
-                        <NavLink className={activeClass} to="/collections">
+                        <NavLink className={activeClass} to={ClientUrls.collections}>
                             {t('nav.collectionsPage')}
                         </NavLink>
-                        <NavLink className={activeClass} to="/profile">
+                        <NavLink className={activeClass} to={ClientUrls.profile}>
                             {t('profile')}
                         </NavLink>
                         <Button className="nav-link burger-menu-link text-left">

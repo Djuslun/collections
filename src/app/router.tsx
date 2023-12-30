@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { ClientUrls } from 'ts/enums';
 
 const HomePage = lazy(() => import('pages/main/mainPage'));
 const CollectionsPage = lazy(() => import('pages/collections/collectionsPage'));
@@ -14,13 +15,16 @@ function Router() {
         <Suspense>
             <main className="flex-1">
                 <Routes>
-                    <Route index path="/" element={<HomePage />} />
-                    <Route path="/collections" element={<CollectionsPage />} />
-                    <Route path="/collection/:id" element={<CollectionPage />} />
-                    <Route path="/item/:id" element={<ItemPage />} />
-                    <Route path="/profile" element={<ProfilePage />} />
-                    <Route path="/new-collection" element={<NewCollecton />} />
-                    <Route path="/new-item" element={<NewItemPage />} />
+                    <Route index path={ClientUrls.homePage} element={<HomePage />} />
+                    <Route path={ClientUrls.collections} element={<CollectionsPage />} />
+                    <Route
+                        path={`${ClientUrls.collection}/:id`}
+                        element={<CollectionPage />}
+                    />
+                    <Route path={`${ClientUrls.item}/:id`} element={<ItemPage />} />
+                    <Route path={ClientUrls.profile} element={<ProfilePage />} />
+                    <Route path={ClientUrls.newCollection} element={<NewCollecton />} />
+                    <Route path={ClientUrls.newItem} element={<NewItemPage />} />
                     <Route path="*" element={<HomePage />} />
                 </Routes>
             </main>
