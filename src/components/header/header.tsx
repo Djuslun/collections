@@ -1,3 +1,4 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import Logo from 'components/logo/logo';
 import Container from 'ui/container';
 import AuthButton from './authButton/authButton';
@@ -8,6 +9,8 @@ import Nav from './nav/nav';
 import ProfilePageButton from './profilePageButton/profilePageButton';
 
 function Header() {
+    const { isAuthenticated } = useAuth0();
+
     return (
         <header className="bg-main border-b border-gray-400 shadow-md shadow-slate-400 py-2">
             <Container>
@@ -20,8 +23,8 @@ function Header() {
                         <LanguageSwitch />
                         <ColorModeButton />
                         <div className="gap-2 hidden md:flex">
+                            {isAuthenticated && <ProfilePageButton />}
                             <AuthButton />
-                            <ProfilePageButton />
                         </div>
                         <BurgerMenu />
                     </div>

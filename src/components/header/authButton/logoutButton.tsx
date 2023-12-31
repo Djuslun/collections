@@ -1,9 +1,12 @@
-import { useAuth0 } from '@auth0/auth0-react';
+import { LogoutOptions } from '@auth0/auth0-react';
 import { Button } from '@mui/base';
 import { useTranslation } from 'react-i18next';
 
-function LogoutButton() {
-    const { logout } = useAuth0();
+function LogoutButton({
+    logout,
+}: {
+    logout: (options?: LogoutOptions | undefined) => Promise<void>;
+}) {
     const { t } = useTranslation('translation', { keyPrefix: 'header' });
 
     return (

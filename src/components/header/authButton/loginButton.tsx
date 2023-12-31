@@ -1,9 +1,12 @@
-import { useAuth0 } from '@auth0/auth0-react/src';
+import { AppState, RedirectLoginOptions } from '@auth0/auth0-react';
 import { Button } from '@mui/base';
 import { useTranslation } from 'react-i18next';
 
-function LoginButton() {
-    const { loginWithRedirect } = useAuth0();
+function LoginButton({
+    loginWithRedirect,
+}: {
+    loginWithRedirect: (options?: RedirectLoginOptions<AppState>) => Promise<void>;
+}) {
     const { t } = useTranslation('translation', { keyPrefix: 'header' });
 
     return (
