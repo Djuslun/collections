@@ -1,0 +1,40 @@
+{
+    "en": {
+        "translation": {
+            "header": {
+                "nav": {
+                    "homePage": "Home",
+                    "collectionsPage": "Collections"
+                },
+                "login": "Log in",
+                "logout": "Log out",
+                "profile": "Profile"
+            },
+            "mainPage": {
+                "greetingSection": {
+                    "title": "Everything that is important to you is in The Collection",
+                    "text": "The Collection app allows you to find collections to suit every taste, as well as create your own!"
+                }
+            }
+        }
+    },
+    "ru": {
+        "translation": {
+            "header": {
+                "nav": {
+                    "homePage": "Главная",
+                    "collectionsPage": "Коллекции"
+                },
+                "login": "Войти",
+                "logout": "Выйти",
+                "profile": "Профиль"
+            },
+            "mainPage": {
+                "greetingSection": {
+                    "title": "Все что важно для вас - в The Collection",
+                    "text": "Приложение The Colection позволяет вам найти коллекции на любой вкус, а также создавать свои!"
+                }
+            }
+        }
+    }
+}
