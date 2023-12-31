@@ -1,12 +1,12 @@
-import { Button } from '@mui/base';
-import { useTranslation } from 'react-i18next';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from './loginButton';
+import LogoutButton from './logoutButton';
 
 function AuthButton() {
-    const { t } = useTranslation('translation', { keyPrefix: 'header' });
+    const { isAuthenticated } = useAuth0();
 
-    return (
-        <Button className="button border-with-shadow text-button ">{t('login')}</Button>
-    );
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    return <>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</>;
 }
 
 export default AuthButton;
