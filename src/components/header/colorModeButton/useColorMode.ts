@@ -19,8 +19,12 @@ const useColorMode = (): IUseColorMode => {
     useEffect(() => {
         if (mode === 'dark') {
             document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            document.documentElement.setAttribute('data-color-mode', 'dark');
         } else {
             document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            document.documentElement.setAttribute('data-color-mode', 'light');
         }
         localStorage.setItem('mode', mode);
     }, [mode]);

@@ -1,5 +1,6 @@
 import { Auth0Provider } from '@auth0/auth0-react';
 import { WithChidlren } from 'ts/interfaces';
+import AuthTokenWrapper from './authTokenWrapper';
 
 function AuthProvider({ children }: WithChidlren) {
     return (
@@ -12,7 +13,7 @@ function AuthProvider({ children }: WithChidlren) {
                 scope: 'openid profile email',
             }}
         >
-            {children}
+            <AuthTokenWrapper>{children}</AuthTokenWrapper>
         </Auth0Provider>
     );
 }

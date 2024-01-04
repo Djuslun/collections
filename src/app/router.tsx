@@ -13,7 +13,7 @@ const NewItemPage = lazy(() => import('pages/newItem/newItePage'));
 function Router() {
     return (
         <Suspense>
-            <main className="flex-1">
+            <main className="flex-1 py-5">
                 <Routes>
                     <Route index path={ClientUrls.homePage} element={<HomePage />} />
                     <Route path={ClientUrls.collections} element={<CollectionsPage />} />
