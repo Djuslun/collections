@@ -1,0 +1,57 @@
+@import 'tailwind.scss';
+
+.react-select-container.react-select-styles {
+  .react-select {
+    &__control {
+      @apply input h-full;
+
+      &--is-focused {
+        @apply outline outline-1 #{!important};
+        @apply dark:border-white border-black outline-black dark:outline-white shadow-none;
+      }
+    }
+
+    &__single-value {
+      @apply text-black dark:text-white;
+    }
+
+    &__menu-list {
+      @apply dark:bg-gray-800 bg-slate-100;
+    }
+
+    &__option {
+      @apply text-black dark:text-white;
+
+      &:hover{
+        @apply dark:bg-gray-700 bg-slate-300;
+      }
+  
+      &--is-focused {
+        @apply dark:bg-gray-600 bg-slate-200;
+      }
+  
+      &--is-selected {
+        @apply dark:bg-gray-600 bg-slate-200;
+      }
+    }
+
+    &__input {
+      @apply text-black dark:text-white;
+    }
+
+    &__input-container {
+      @apply cursor-text text-main;
+    }
+
+    &__indicator-separator {
+      @apply bg-gray-500;
+    }
+
+    &__indicator {
+      @apply text-gray-500;
+      &:hover {
+        @apply text-gray-700;
+      }
+    }
+  } 
+}

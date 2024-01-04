@@ -15,6 +15,41 @@
                     "title": "Everything that is important to you is in The Collection",
                     "text": "The Collection app allows you to find collections to suit every taste, as well as create your own!"
                 }
+            },
+            "profilePage": {
+                "new-collection": "New collection"
+            },
+            "form": {
+                "collectionForm": {
+                    "title": "Collection title",
+                    "description": "Collection description",
+                    "theme": "Collection theme",
+                    "image": "Collection image",
+                    "themeSelectPlaceholder": "Select a theme",
+                    "titlePlaceholder": "Enter a title",
+                    "customFields": "Custom fields",
+                    "addField": "Add custom field",
+                    "customFieldLabelPlaceholder": "Field label",
+                    "customFieldTypePlaceholder": "Field type",
+                    "customFildBrief": "Custom fields can be added to any collection. They define which characteristics will be assigned to each item in the particular collection. The fields can have one of the following types: number, string, text (represented as string value with Markdown formatting), date, boolean (yes or no)."
+                },
+                "confirm": "Сonfirm",
+                "cancel": "Сancel",
+                "dropZone": "Upload or drop a file right here"
+            },
+            "collectionThemes": {
+                "work": "Work",
+                "hobby": "Hobby",
+                "coins": "Coins",
+                "books": "Books",
+                "other": "Other"
+            },
+            "customFieldType": {
+                "string": "String",
+                "textarea": "Text",
+                "boolean": "Boolean",
+                "date": "Date",
+                "number": "Number"
             }
         }
     },
@@ -34,6 +69,41 @@
                     "title": "Все что важно для вас - в The Collection",
                     "text": "Приложение The Colection позволяет вам найти коллекции на любой вкус, а также создавать свои!"
                 }
+            },
+            "profilePage": {
+                "new-collection": "Новая коллекция"
+            },
+            "form": {
+                "collectionForm": {
+                    "title": "Название коллекции",
+                    "description": "Описание коллекции",
+                    "theme": "Тема коллекции",
+                    "image": "Изображение коллекции",
+                    "titlePlaceholder": "Введите название",
+                    "themeSelectPlaceholder": "Выберите тему",
+                    "customFields": "Кастомные поля",
+                    "addField": "Добавить поле",
+                    "customFieldLabelPlaceholder": "Название поля",
+                    "customFieldTypePlaceholder": "Тип поля",
+                    "customFildBrief": "Кастомные поля могут быть добавлены в любую коллекцию. Они определяют, какие характеристики будут присвоены каждому элементу в конкретной коллекции. Поля могут иметь один из следующих типов: число, строка, текст (представленный в виде строкового значения с форматированием разметки Markdown), дата, логическое значение (да или нет)."
+                },
+                "confirm": "Потвердить",
+                "cancel": "Отмена",
+                "dropZone": "Загрузите или перетащите изображение сюда"
+            },
+            "collectionThemes": {
+                "work": "Работа",
+                "hobby": "Хобби",
+                "coins": "Монеты",
+                "books": "Книги",
+                "other": "Другое"
+            },
+            "customFieldType": {
+                "string": "Строка",
+                "textarea": "Текст",
+                "boolean": "Логическое",
+                "date": "Дата",
+                "number": "Число"
             }
         }
     }
