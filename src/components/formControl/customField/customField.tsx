@@ -25,7 +25,7 @@ function CustomField({
         <div className="grid grid-cols-7 gap-3 w-full">
             <input
                 type="text"
-                className=" p-2 col-span-3 input"
+                className=" p-2 col-span-3 input text-sm smm:text-base"
                 value={field.label}
                 placeholder={t('customFieldLabelPlaceholder')}
                 onChange={({ target }) => handleChange('label', target.value, field.id)}
@@ -44,7 +44,7 @@ function CustomField({
             />
             <Button
                 type="button"
-                className="button"
+                className="p-0 smm:p-2 bg-control border-with-shadow"
                 onClick={() => handleDelete(field.id)}
             >
                 <RemoveIcon className="text-lg" />

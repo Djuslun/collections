@@ -12,7 +12,11 @@
     }
 
     &__single-value {
-      @apply text-black dark:text-white;
+      @apply text-black dark:text-white text-sm smm:text-base;
+    }
+
+    &__placeholder {
+      @apply  text-[12px] smm:text-base;
     }
 
     &__menu-list {
@@ -20,7 +24,7 @@
     }
 
     &__option {
-      @apply text-black dark:text-white;
+      @apply text-black dark:text-white text-sm smm:text-base;
 
       &:hover{
         @apply dark:bg-gray-700 bg-slate-300;
@@ -40,7 +44,7 @@
     }
 
     &__input-container {
-      @apply cursor-text text-main;
+      @apply cursor-text text-main ;
     }
 
     &__indicator-separator {
@@ -48,7 +52,7 @@
     }
 
     &__indicator {
-      @apply text-gray-500;
+      @apply text-gray-500 p-1 smm:p-2;
       &:hover {
         @apply text-gray-700;
       }
