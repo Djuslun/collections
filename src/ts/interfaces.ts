@@ -1,5 +1,11 @@
 import { ReactNode } from 'react';
 
+interface DatabaseModel {
+    _id: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
 interface WithChidlren {
     children: ReactNode;
 }
@@ -23,4 +29,24 @@ interface CollectionFormValues {
     customFields: ICustomField[];
 }
 
-export type { WithChidlren, Option, ICustomField, CollectionFormValues };
+interface CollectionSubmitFormValues extends Omit<CollectionFormValues, 'image'> {
+    imageUrl: string | undefined;
+}
+
+interface CollectionRequestBody extends CollectionSubmitFormValues {
+    userId: string | undefined;
+    createdBy: string | undefined;
+}
+
+interface Collection extends DatabaseModel, CollectionRequestBody {
+    itemCount: number;
+}
+
+export type {
+    WithChidlren,
+    Option,
+    ICustomField,
+    CollectionFormValues,
+    Collection,
+    CollectionRequestBody,
+};

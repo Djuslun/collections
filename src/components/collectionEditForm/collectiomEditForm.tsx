@@ -17,14 +17,22 @@ import {
 import { collectionThemes } from 'utils/consts';
 import useTranslateSelectOptions from 'hooks/useTranslateSelectOptions';
 import { CollectionFormValues } from 'ts/interfaces';
+import { THandleSubmitCollectionForm } from 'ts/types';
 import Container from 'ui/container';
+import Loader from 'ui/loader/loader';
 
 function CollectiomEditForm({
     initialValues,
     handleSubmit,
+    userId,
+    createdBy,
+    isLoading,
 }: {
     initialValues: CollectionFormValues;
-    handleSubmit: (value: CollectionFormValues) => void;
+    handleSubmit: THandleSubmitCollectionForm;
+    userId: string;
+    createdBy: string;
+    isLoading: boolean;
 }) {
     const { t } = useTranslation('translation', {
         keyPrefix: 'form',
@@ -41,7 +49,7 @@ function CollectiomEditForm({
                     collectionTheme: Yup.string().required('Requiered'),
                     customFields: Yup.array(),
                 })}
-                onSubmit={(values) => handleSubmit(values)}
+                onSubmit={(values) => handleSubmit(values, userId, createdBy)}
             >
                 <Form>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -92,6 +100,7 @@ function CollectiomEditForm({
                     </div>
                 </Form>
             </Formik>
+            <Loader isLoading={isLoading} />
         </Container>
     );
 }

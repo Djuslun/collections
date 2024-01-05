@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import App from './app/App';
-import store from './redux/store';
+import store from './store/store';
 import './styles/drop-zone.scss';
 import './styles/index.scss';
 import './styles/md-editor.scss';

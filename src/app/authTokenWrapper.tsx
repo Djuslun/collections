@@ -2,8 +2,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import { WithChidlren } from 'ts/interfaces';
 import LoaderWrapper from 'ui/loader/loaderWrapper';
-import { setAccsesToken } from '../redux/slices/userSlice';
-import { useAppDispath } from '../redux/useRedux';
+import { setAccsesToken } from 'store/slices/userSlice';
+import { useAppDispath } from 'store/useRedux';
 
 function AuthTokenWrapper({ children }: WithChidlren) {
     const [isReady, setIsReady] = useState(false);

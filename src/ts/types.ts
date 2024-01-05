@@ -1,6 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
+import { CollectionFormValues } from './interfaces';
 
 type TSetState<T> = Dispatch<SetStateAction<T>>;
 
-// eslint-disable-next-line import/prefer-default-export
-export type { TSetState };
+type THandleSubmitCollectionForm = (
+    value: CollectionFormValues,
+    userId: string,
+    createdBy: string
+) => Promise<void>;
+
+export type { TSetState, THandleSubmitCollectionForm };

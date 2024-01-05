@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 enum ClientUrls {
     homePage = '/',
     collections = '/collections',
@@ -9,4 +8,23 @@ enum ClientUrls {
     newItem = '/new-item',
 }
 
-export { ClientUrls };
+enum Endpoints {
+    collections = 'collections/',
+    items = 'items/',
+    newItem = 'items/new/',
+    itemsInCollection = 'items/collection/',
+    comments = 'comments/',
+    search = 'search/',
+    tags = 'tags/',
+    users = 'users/',
+}
+
+enum Methods {
+    get = 'GET',
+    post = 'POST',
+    put = 'PUT',
+    delete = 'DELETE',
+    patch = 'PATCH',
+}
+
+export { ClientUrls, Endpoints, Methods };
