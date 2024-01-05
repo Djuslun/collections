@@ -10,7 +10,9 @@ function App() {
             <BrowserRouter>
                 <div className="min-h-screen bg-main flex flex-col overflow-x-hidden">
                     <Header />
-                    <Router />
+                    <main className="flex-1 py-5">
+                        <Router />
+                    </main>
                     <Footer />
                 </div>
             </BrowserRouter>

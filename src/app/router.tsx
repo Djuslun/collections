@@ -13,21 +13,19 @@ const NewItemPage = lazy(() => import('pages/newItem/newItePage'));
 function Router() {
     return (
         <Suspense>
-            <main className="flex-1 py-5">
-                <Routes>
-                    <Route index path={ClientUrls.homePage} element={<HomePage />} />
-                    <Route path={ClientUrls.collections} element={<CollectionsPage />} />
-                    <Route
-                        path={`${ClientUrls.collection}/:id`}
-                        element={<CollectionPage />}
-                    />
-                    <Route path={`${ClientUrls.item}/:id`} element={<ItemPage />} />
-                    <Route path={ClientUrls.profile} element={<ProfilePage />} />
-                    <Route path={ClientUrls.newCollection} element={<NewCollecton />} />
-                    <Route path={ClientUrls.newItem} element={<NewItemPage />} />
-                    <Route path="*" element={<HomePage />} />
-                </Routes>
-            </main>
+            <Routes>
+                <Route index path={ClientUrls.homePage} element={<HomePage />} />
+                <Route path={ClientUrls.collections} element={<CollectionsPage />} />
+                <Route
+                    path={`${ClientUrls.collection}/:id`}
+                    element={<CollectionPage />}
+                />
+                <Route path={`${ClientUrls.item}/:id`} element={<ItemPage />} />
+                <Route path={ClientUrls.profile} element={<ProfilePage />} />
+                <Route path={ClientUrls.newCollection} element={<NewCollecton />} />
+                <Route path={ClientUrls.newItem} element={<NewItemPage />} />
+                <Route path="*" element={<HomePage />} />
+            </Routes>
         </Suspense>
     );
 }
