@@ -50,6 +50,11 @@
                 "boolean": "Boolean",
                 "date": "Date",
                 "number": "Number"
+            },
+            "collection": {
+                "itemCount": "Item count",
+                "createdBy": "Created by",
+                "createdAt": "at"
             }
         }
     },
@@ -104,6 +109,11 @@
                 "boolean": "Логическое",
                 "date": "Дата",
                 "number": "Число"
+            },
+            "collection": {
+                "itemCount": "Количество элементов",
+                "createdBy": "Создал(а)",
+                "createdAt": "в"
             }
         }
     }
