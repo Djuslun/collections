@@ -9,7 +9,7 @@ function LoaderWrapper({
     isLoading: boolean;
 }) {
     if (isLoading) {
-        return <Loader />;
+        return <Loader isLoading />;
     }
 
     // eslint-disable-next-line react/jsx-no-useless-fragment

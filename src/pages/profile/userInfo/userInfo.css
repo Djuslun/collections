@@ -1,7 +1,0 @@
-.user-image {
-    @apply w-36 h-36 rounded-md sm:w-44 sm:h-44;
-}
-
-.user-info-section {
-    @apply flex flex-col items-start smm:flex-row smm:items-center gap-5 mb-5;
-}

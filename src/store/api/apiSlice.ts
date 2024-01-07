@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { RootState } from 'redux/store';
+import { RootState } from '../store';
 
 export const apiSlice = createApi({
     reducerPath: 'apiSlice',
     baseQuery: fetchBaseQuery({
-        baseUrl: `${process.env.REACR_APP_BASE_URL}/`,
+        baseUrl: `${process.env.REACT_APP_BASE_URL}/`,
         prepareHeaders(headers, { getState }) {
             const { token } = (getState() as RootState).user;
 

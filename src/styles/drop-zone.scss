@@ -1,7 +1,11 @@
 @import 'tailwind.scss';
 
 .dropZone.dropZone-styles {
-  @apply max-w-full border-gray-500 min-h-20 input;
+  @apply max-w-full min-w-[250px] border-gray-500 min-h-20 input;
+
+  div span{
+    @apply text-gray-500 dark:text-gray-400 text-[10px] smm:text-sm md:text-base
+  }
 
   svg path {
     @apply fill-slate-500;
