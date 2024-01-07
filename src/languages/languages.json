@@ -54,7 +54,9 @@
             "collection": {
                 "itemCount": "Item count",
                 "createdBy": "Created by",
-                "createdAt": "at"
+                "createdAt": "at",
+                "delete": "Delete",
+                "edit": "Edit"
             }
         }
     },
@@ -113,7 +115,9 @@
             "collection": {
                 "itemCount": "Количество элементов",
                 "createdBy": "Создал(а)",
-                "createdAt": "в"
+                "createdAt": "в",
+                "delete": "Удалить",
+                "edit": "Редактировать"
             }
         }
     }

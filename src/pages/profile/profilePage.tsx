@@ -3,7 +3,6 @@ import { Navigate } from 'react-router-dom';
 import Container from 'ui/container';
 import NewCollectionButton from './newCollectionButton';
 import UserInfo from './userInfo/userInfo';
-import './userInfo/userInfo.css';
 import UserInfoSkeleton from './userInfo/userInfoSkeleton';
 
 function ProfilePage() {

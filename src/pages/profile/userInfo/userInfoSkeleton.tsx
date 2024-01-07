@@ -2,8 +2,8 @@ import { Skeleton } from '@mui/material';
 
 function UserInfoSkeleton() {
     return (
-        <div className="user-info-section">
-            <div className="user-image">
+        <div className="info-section">
+            <div className="info-image">
                 <Skeleton
                     variant="rounded"
                     sx={{

@@ -1,3 +1,5 @@
+@import './tailwind.scss';
+
 [data-color-mode*='dark'][class*='dark'] .wmde-markdown,
 [data-color-mode*='dark'][class*='dark'] .wmde-markdown-var,
 body[data-color-mode*='dark'][class*='dark'] {
@@ -46,4 +48,9 @@ body[data-color-mode*='light'][class*='light'] {
     ol {
         list-style: decimal;
     }
+}
+
+
+.wmde-markdown.md-marldown-styles {
+  @apply bg-main;
 }
