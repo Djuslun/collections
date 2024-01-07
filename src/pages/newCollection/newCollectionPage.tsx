@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { Navigate } from 'react-router-dom';
-import CollectiomEditForm from 'components/collectionEditForm/collectiomEditForm';
+import CollectiomEditForm from 'components/collectionEditForm/collectionEditForm';
 import { ClientUrls } from 'ts/enums';
 import { CollectionFormValues } from 'ts/interfaces';
 import useSubmitCollectionForm from './useSubmitCollectionForm';
@@ -18,20 +18,15 @@ function NewCollectionPage() {
     if (!user) {
         return <Navigate to={ClientUrls.homePage} />;
     }
-    const { nickname, sub } = user;
-
-    if (!nickname || !sub) {
-        return <Navigate to={ClientUrls.homePage} />;
-    }
-
-    const { handleSubmit, isLoading } = useSubmitCollectionForm();
+    const { handleSubmit, isLoading } = useSubmitCollectionForm(
+        user.sub as string,
+        user.nickname as string
+    );
 
     return (
         <CollectiomEditForm
             handleSubmit={handleSubmit}
             initialValues={initialValues}
-            createdBy={nickname}
-            userId={sub}
             isLoading={isLoading}
         />
     );

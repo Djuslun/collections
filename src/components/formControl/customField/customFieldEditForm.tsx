@@ -1,8 +1,9 @@
 import { Button } from '@mui/base';
 import AddIcon from '@mui/icons-material/Add';
 import { FieldProps } from 'formik';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ICustomField } from 'ts/interfaces';
 import CustomField from './customField';
 import useCastomFields from './useCustomField';
 
@@ -10,10 +11,14 @@ function CustomFieldEditForm({ field, form }: FieldProps) {
     const { customFields, addCusromField, changeCustomField, deleteCustomField } =
         useCastomFields(field.value || []);
     const { t } = useTranslation('translation', { keyPrefix: 'form.collectionForm' });
-
+    const customFieldsRef = useRef<ICustomField[]>([]);
     useEffect(() => {
         form.setFieldValue(field.name, customFields);
     }, [customFields]);
+
+    useEffect(() => {
+        customFieldsRef.current = field.value;
+    }, []);
 
     return (
         <div className="flex flex-col ">
@@ -37,7 +42,11 @@ function CustomFieldEditForm({ field, form }: FieldProps) {
                         handleChange={changeCustomField}
                         field={field}
                         handleDelete={deleteCustomField}
-                        edit
+                        edit={
+                            customFieldsRef.current?.some(
+                                (customField) => customField?.id === field.id
+                            ) || false
+                        }
                     />
                 ))}
             </div>

@@ -40,7 +40,7 @@ function CustomField({
                 classNamePrefix="react-select"
                 menuPlacement="bottom"
                 placeholder={t('customFieldTypePlaceholder')}
-                isDisabled={!edit}
+                isDisabled={edit}
             />
             <Button
                 type="button"

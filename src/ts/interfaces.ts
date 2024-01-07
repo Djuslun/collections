@@ -34,8 +34,8 @@ interface CollectionSubmitFormValues extends Omit<CollectionFormValues, 'image'>
 }
 
 interface CollectionRequestBody extends CollectionSubmitFormValues {
-    userId: string | undefined;
-    createdBy: string | undefined;
+    userId: string;
+    createdBy: string;
 }
 
 interface Collection extends DatabaseModel, CollectionRequestBody {

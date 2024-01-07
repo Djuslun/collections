@@ -1,7 +1,5 @@
-import { Button } from '@mui/base';
 import { Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
-import * as Yup from 'yup';
 import CustomFieldEditForm from 'components/formControl/customField/customFieldEditForm';
 import FormikDropZone from 'components/formControl/formikDropZone';
 import FormikField from 'components/formControl/formikField';
@@ -19,19 +17,17 @@ import useTranslateSelectOptions from 'hooks/useTranslateSelectOptions';
 import { CollectionFormValues } from 'ts/interfaces';
 import { THandleSubmitCollectionForm } from 'ts/types';
 import Container from 'ui/container';
+import FormButtons from 'ui/formButtons/formButtons';
 import Loader from 'ui/loader/loader';
+import validationSchema from './validationShema';
 
 function CollectiomEditForm({
     initialValues,
     handleSubmit,
-    userId,
-    createdBy,
     isLoading,
 }: {
     initialValues: CollectionFormValues;
     handleSubmit: THandleSubmitCollectionForm;
-    userId: string;
-    createdBy: string;
     isLoading: boolean;
 }) {
     const { t } = useTranslation('translation', {
@@ -43,13 +39,8 @@ function CollectiomEditForm({
         <Container>
             <Formik
                 initialValues={initialValues}
-                validationSchema={Yup.object().shape({
-                    title: Yup.string().min(2, 'Min 2 char').trim().required('Requiered'),
-                    description: Yup.string().min(0, ''),
-                    collectionTheme: Yup.string().required('Requiered'),
-                    customFields: Yup.array(),
-                })}
-                onSubmit={(values) => handleSubmit(values, userId, createdBy)}
+                validationSchema={validationSchema}
+                onSubmit={(values) => handleSubmit(values)}
             >
                 <Form>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -90,14 +81,7 @@ function CollectiomEditForm({
                         />
                         <div />
                     </div>
-                    <div className="flex gap-4 justify-center">
-                        <Button type="submit" className="button w-36">
-                            {t('cancel')}
-                        </Button>
-                        <Button type="submit" className="button w-36">
-                            {t('confirm')}
-                        </Button>
-                    </div>
+                    <FormButtons />
                 </Form>
             </Formik>
             <Loader isLoading={isLoading} />

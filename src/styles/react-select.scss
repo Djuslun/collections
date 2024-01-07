@@ -9,8 +9,13 @@
         @apply outline outline-1 #{!important};
         @apply dark:border-white border-black outline-black dark:outline-white shadow-none;
       }
+
+      &--is-disabled {
+        @apply bg-gray-200 dark:bg-gray-600;
+      }
     }
 
+   
     &__single-value {
       @apply text-black dark:text-white text-sm smm:text-base;
     }

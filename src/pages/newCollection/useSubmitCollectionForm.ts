@@ -9,18 +9,17 @@ interface IUseSubmitCollectionForm {
     isLoading: boolean;
 }
 
-const useSubmitCollectionForm = (): IUseSubmitCollectionForm => {
+const useSubmitCollectionForm = (
+    userId: string,
+    createdBy: string
+): IUseSubmitCollectionForm => {
     const { uploadImage, isLoading: isImageLoading } = useImageUpload();
     const [createCollection, { isLoading: isCollectionCreating }] =
         useCreateCollectionMutation();
     const navigate = useNavigate();
     const isLoading = isImageLoading || isCollectionCreating;
 
-    const handleSubmit: THandleSubmitCollectionForm = async (
-        value,
-        userId,
-        createdBy
-    ) => {
+    const handleSubmit: THandleSubmitCollectionForm = async (value) => {
         const { title, description, collectionTheme, customFields, image } = value;
         const url = await uploadImage(image, title, userId);
 
