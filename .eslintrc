@@ -32,6 +32,7 @@
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-shadow": "off",
     "jsx-a11y/label-has-associated-control": "off",
+    "react/require-default-props": "off",
     "no-param-reassign": [
       "error",
       { "props": true, "ignorePropertyModificationsFor": ["state"] }
