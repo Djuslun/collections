@@ -14,10 +14,12 @@
                 "greetingSection": {
                     "title": "Everything that is important to you is in The Collection",
                     "text": "The Collection app allows you to find collections to suit every taste, as well as create your own!"
-                }
+                },
+                "topCollection": "Top collections"
             },
             "profilePage": {
-                "new-collection": "New collection"
+                "new-collection": "New collection",
+                "myCollection": "My collections"
             },
             "form": {
                 "collectionForm": {
@@ -75,10 +77,12 @@
                 "greetingSection": {
                     "title": "Все что важно для вас - в The Collection",
                     "text": "Приложение The Colection позволяет вам найти коллекции на любой вкус, а также создавать свои!"
-                }
+                },
+                "topCollection": "Самые большие коллекции"
             },
             "profilePage": {
-                "new-collection": "Новая коллекция"
+                "new-collection": "Новая коллекция",
+                "myCollection": "Мои коллекции"
             },
             "form": {
                 "collectionForm": {

@@ -3,22 +3,18 @@ import { useGetCollectionsQuery } from 'store/api/collectionApiSlice';
 import CollectionList from 'components/collection/collectionList';
 import LoaderWrapper from 'ui/loader/loaderWrapper';
 
-function TopCollectionList() {
+function MyCollectionList() {
     const { t } = useTranslation('translation', {
-        keyPrefix: 'mainPage',
+        keyPrefix: 'profilePage',
     });
     const { data: collections, isLoading, isSuccess } = useGetCollectionsQuery();
+
     return (
         <LoaderWrapper isLoading={isLoading}>
-            <h2 className="title">{t('topCollection')}</h2>
-            {isSuccess && (
-                <CollectionList
-                    collectionList={collections}
-                    itemStyle="lg:last:hidden xl:last:block"
-                />
-            )}
+            <h2 className="title">{t('myCollection')}</h2>
+            {isSuccess && <CollectionList collectionList={collections} />}
         </LoaderWrapper>
     );
 }
 
-export default TopCollectionList;
+export default MyCollectionList;

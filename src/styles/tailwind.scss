@@ -49,3 +49,7 @@
 .info-section {
   @apply flex flex-col items-start smm:flex-row smm:items-center gap-5 mb-5;
 }
+
+.title {
+  @apply text-2xl font-bold md:text-4xl xl:text-5xl 2xl:text-6xl mb-2
+}
