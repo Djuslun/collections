@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { CustomFieldTypes } from 'ts/types';
 
 interface DatabaseModel {
     _id: string;
@@ -18,7 +19,11 @@ interface Option {
 interface ICustomField {
     id: string;
     label: string;
-    type: string;
+    type: CustomFieldTypes;
+}
+
+export interface ICustomFieldItem extends ICustomField {
+    value: number | string | boolean | Date;
 }
 
 interface CollectionFormValues {
@@ -41,6 +46,28 @@ interface CollectionRequestBody extends CollectionSubmitFormValues {
 interface Collection extends DatabaseModel, CollectionRequestBody {
     itemCount: number;
 }
+
+export interface ItemFormValues {
+    title: string;
+    description: string;
+    tags: Option[];
+    customFields: ICustomFieldItem[];
+    image: File | null;
+}
+
+export interface ItemSubmitFormValues extends Omit<ItemFormValues, 'image'> {
+    imageUrl: string | undefined;
+}
+
+export interface ItemRequestBody extends ItemSubmitFormValues {
+    userId: string;
+    createdBy: string;
+    collectionId: string;
+    collectionTitle: string;
+    likes: string[];
+}
+
+export interface Item extends DatabaseModel, ItemRequestBody {}
 
 export type {
     WithChidlren,

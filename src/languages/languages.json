@@ -17,6 +17,9 @@
                 },
                 "topCollection": "Top collections"
             },
+            "collectionPage": {
+                "newItem": "New item"
+            },
             "profilePage": {
                 "new-collection": "New collection",
                 "myCollection": "My collections"
@@ -28,13 +31,26 @@
                     "theme": "Collection theme",
                     "image": "Collection image",
                     "themeSelectPlaceholder": "Select a theme",
-                    "titlePlaceholder": "Enter a title",
                     "customFields": "Custom fields",
                     "addField": "Add custom field",
                     "customFieldLabelPlaceholder": "Field label",
                     "customFieldTypePlaceholder": "Field type",
                     "customFildBrief": "Custom fields can be added to any collection. They define which characteristics will be assigned to each item in the particular collection. The fields can have one of the following types: number, string, text (represented as string value with Markdown formatting), date, boolean (yes or no)."
                 },
+                "itemForm": {
+                    "title": "Item title",
+                    "tags": "Item tags",
+                    "tagsPlaceholder": "Select tags or create your own",
+                    "description": "Item description",
+                    "image": "Item image",
+                    "customFildBrief": "Custom fields have been created for this collection. You can fill them in for this element, or leave empty values for those that you don’t need right now.",
+                    "string": "string",
+                    "number": "number",
+                    "textarea": "text (with Markdown support)",
+                    "boolean": "boolean (yes/no)",
+                    "date": "date"
+                },
+                "titlePlaceholder": "Enter a title",
                 "confirm": "Сonfirm",
                 "cancel": "Сancel",
                 "dropZone": "Upload or drop a file right here"
@@ -80,6 +96,9 @@
                 },
                 "topCollection": "Самые большие коллекции"
             },
+            "collectionPage": {
+                "newItem": "Новый элемент"
+            },
             "profilePage": {
                 "new-collection": "Новая коллекция",
                 "myCollection": "Мои коллекции"
@@ -90,7 +109,6 @@
                     "description": "Описание коллекции",
                     "theme": "Тема коллекции",
                     "image": "Изображение коллекции",
-                    "titlePlaceholder": "Введите название",
                     "themeSelectPlaceholder": "Выберите тему",
                     "customFields": "Кастомные поля",
                     "addField": "Добавить поле",
@@ -98,6 +116,20 @@
                     "customFieldTypePlaceholder": "Тип поля",
                     "customFildBrief": "Кастомные поля могут быть добавлены в любую коллекцию. Они определяют, какие характеристики будут присвоены каждому элементу в конкретной коллекции. Поля могут иметь один из следующих типов: число, строка, текст (представленный в виде строкового значения с форматированием разметки Markdown), дата, логическое значение (да или нет)."
                 },
+                "itemForm": {
+                    "title": "Название элемента",
+                    "tags": "Теги элемента",
+                    "tagsPlaceholder": "Выберите теги или создайте свой",
+                    "description": "Описание элемента",
+                    "image": "Изображение элемента",
+                    "customFildBrief": "Для этой коллекции созданы кастомные поля. Вы можете заполнить их для данного элемента, или оставить с пустыми знычениями те, которые вам сейчас не нужны",
+                    "string": "строка",
+                    "number": "число",
+                    "textarea": "текст (с поддержкой разметки Markdown)",
+                    "boolean": "логическое (да/нет)",
+                    "date": "дата"
+                },
+                "titlePlaceholder": "Введите название",
                 "confirm": "Потвердить",
                 "cancel": "Отмена",
                 "dropZone": "Загрузите или перетащите изображение сюда"

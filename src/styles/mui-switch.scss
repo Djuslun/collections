@@ -1,0 +1,19 @@
+@import './tailwind.scss';
+
+.switch {
+  .MuiSwitch-switchBase {
+    @apply text-white dark:text-white;
+   }
+   
+   .MuiSwitch-switchBase.Mui-checked {
+     @apply text-rose-400;
+   }
+   
+   .MuiSwitch-track {
+     @apply dark:bg-gray-600 bg-gray-500;
+   }
+   
+   .MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+     @apply bg-white dark:bg-white opacity-100;
+   }
+}

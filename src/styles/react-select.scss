@@ -62,5 +62,13 @@
         @apply text-gray-700;
       }
     }
+
+    &__multi-value {
+      @apply bg-gray-200 dark:bg-gray-600;
+
+      &__label {
+        @apply text-main;
+      }
+    }
   } 
 }

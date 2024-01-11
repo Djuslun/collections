@@ -1,20 +1,15 @@
 import { useState } from 'react';
 import { v4 } from 'uuid';
-
-export interface ICustomField {
-    id: string;
-    label: string;
-    type: string;
-}
+import { ICustomField } from 'ts/interfaces';
 
 const useCustomFields = (initialValue: ICustomField[]) => {
     const [customFields, setCustomFields] = useState<ICustomField[]>(initialValue);
 
-    const addCusromField = () => {
+    const addCustomField = () => {
         const newCustomField = {
             id: v4(),
             label: '',
-            type: '',
+            type: '' as const,
         };
         setCustomFields((customFields) => [...customFields, newCustomField]);
     };
@@ -36,7 +31,7 @@ const useCustomFields = (initialValue: ICustomField[]) => {
         );
     };
 
-    return { customFields, addCusromField, changeCustomField, deleteCustomField };
+    return { customFields, addCustomField, changeCustomField, deleteCustomField };
 };
 
 export default useCustomFields;

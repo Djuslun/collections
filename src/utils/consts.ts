@@ -1,3 +1,5 @@
+import { CustomFieldTypes } from 'ts/types';
+
 type CollectionThemesTypes = 'work' | 'hobby' | 'coins' | 'other' | 'books';
 const collectionThemes: CollectionThemesTypes[] = [
     'work',
@@ -7,7 +9,6 @@ const collectionThemes: CollectionThemesTypes[] = [
     'other',
 ];
 
-type CustomFieldTypes = 'string' | 'textarea' | 'number' | 'boolean' | 'date';
 const customFielsTypes: CustomFieldTypes[] = [
     'string',
     'textarea',

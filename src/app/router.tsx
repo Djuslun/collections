@@ -8,7 +8,7 @@ const CollectionPage = lazy(() => import('pages/collection/collectionPage'));
 const ItemPage = lazy(() => import('pages/item/itemPage'));
 const ProfilePage = lazy(() => import('pages/profile/profilePage'));
 const NewCollecton = lazy(() => import('pages/newCollection/newCollectionPage'));
-const NewItemPage = lazy(() => import('pages/newItem/newItePage'));
+const NewItemPage = lazy(() => import('pages/newItem/newItemPage'));
 const EditCollectionPage = lazy(() => import('pages/editCollection/editCollectiomPage'));
 
 function Router() {

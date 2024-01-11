@@ -1,4 +1,5 @@
 @import 'tailwind.scss';
+@import './mui-switch.scss';
 
 body {
     margin: 0;
@@ -10,4 +11,8 @@ body {
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }

@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useGetCollectionByIdQuery } from 'store/api/collectionApiSlice';
+import NewItemButton from 'pages/collection/newItemButton';
 import CollectionInfo from 'components/collection/collectionInfo';
 import DataRequired from 'components/dataRequired/dataRequiredWrapper';
 import { Collection } from 'ts/interfaces';
@@ -9,12 +10,8 @@ import LoaderWrapper from 'ui/loader/loaderWrapper';
 import CollectionActions from './collectionActions';
 
 function CollectionPage() {
-    const { id } = useParams();
-    const {
-        data: collection,
-        isLoading,
-        isSuccess,
-    } = useGetCollectionByIdQuery(id as string);
+    const { id } = useParams() as { id: string };
+    const { data: collection, isLoading, isSuccess } = useGetCollectionByIdQuery(id);
 
     return (
         <LoaderWrapper isLoading={isLoading}>
@@ -25,10 +22,11 @@ function CollectionPage() {
                             <CollectionInfo collection={collection} />
                             <Collapse>
                                 <CollectionActions
-                                    collectionId={id as string}
+                                    collectionId={id}
                                     collection={collection}
                                 />
                             </Collapse>
+                            <NewItemButton collection={collection} />
                         </>
                     )}
                 </DataRequired>
