@@ -16,6 +16,8 @@ interface Option {
     label: string;
 }
 
+export interface Tag extends Option, Pick<DatabaseModel, '_id'> {}
+
 interface ICustomField {
     id: string;
     label: string;
@@ -50,7 +52,7 @@ interface Collection extends DatabaseModel, CollectionRequestBody {
 export interface ItemFormValues {
     title: string;
     description: string;
-    tags: Option[];
+    tags: string[];
     customFields: ICustomFieldItem[];
     image: File | null;
 }
