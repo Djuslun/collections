@@ -15,8 +15,8 @@ function NewItemPage() {
     const { handleSubmit } = useSubmitItemForm(
         user.sub as string,
         user.nickname as string,
-        state.collectionId,
-        state.collectionTitle
+        state._id,
+        state.title
     );
 
     const { customFields } = state as Collection;

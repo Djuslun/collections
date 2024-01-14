@@ -1,5 +1,5 @@
 import { Endpoints, Methods } from 'ts/enums';
-import { Option, Tag } from 'ts/interfaces';
+import { Tag } from 'ts/interfaces';
 import api from './apiSlice';
 
 export const itemApiSlice = api.injectEndpoints({
