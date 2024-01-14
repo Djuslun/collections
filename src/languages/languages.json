@@ -75,6 +75,10 @@
                 "createdAt": "at",
                 "delete": "Delete",
                 "edit": "Edit"
+            },
+            "item": {
+              "fromCollection": "From collection",
+              "createdBy": "Created by"
             }
         }
     },
@@ -154,6 +158,10 @@
                 "createdAt": "в",
                 "delete": "Удалить",
                 "edit": "Редактировать"
+            },
+            "item": {
+              "fromCollection": "Из коллекции",
+              "createdBy": "Создал(а)"
             }
         }
     }
