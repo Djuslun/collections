@@ -8,7 +8,7 @@ function NewItemButton({ collection }: { collection: Collection }) {
 
     return (
         <Link
-            className="button border-with-shadow"
+            className="button border-with-shadow inline-block mb-4"
             to={ClientUrls.newItem}
             state={collection}
         >

@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ClientUrls } from 'ts/enums';
+import Loader from 'ui/loader/loader';
 
 const HomePage = lazy(() => import('pages/main/mainPage'));
 const CollectionsPage = lazy(() => import('pages/collections/collectionsPage'));
@@ -13,7 +14,7 @@ const EditCollectionPage = lazy(() => import('pages/editCollection/editCollectio
 
 function Router() {
     return (
-        <Suspense>
+        <Suspense fallback={<Loader isLoading />}>
             <Routes>
                 <Route index path={ClientUrls.homePage} element={<HomePage />} />
                 <Route path={ClientUrls.collections} element={<CollectionsPage />} />
