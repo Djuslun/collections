@@ -78,7 +78,13 @@
             },
             "item": {
                 "fromCollection": "From collection",
-                "createdBy": "Created by"
+                "createdBy": "Created by",
+                "table": {
+                    "image": "Image",
+                    "title": "Title",
+                    "likes": "Likes",
+                    "createdAt": "Created at"
+                }
             },
             "emptyState": {
                 "collection": "There is no collections.",
@@ -165,7 +171,13 @@
             },
             "item": {
                 "fromCollection": "Из коллекции",
-                "createdBy": "Создал(а)"
+                "createdBy": "Создал(а)",
+                "table": {
+                    "image": "Изображение",
+                    "title": "Название",
+                    "likes": "Лайков",
+                    "createdAt": "Создано"
+                }
             },
             "emptyState": {
                 "collection": "Коллекций нет. Но вы держитесь там)",

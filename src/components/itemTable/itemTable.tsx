@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
 /* eslint-disable react/jsx-no-useless-fragment */
 import Paper from '@mui/material/Paper';
 import MuiTable from '@mui/material/Table';
@@ -6,12 +8,16 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import EmptyState from 'components/emptyStates/emptyState';
 import { ClientUrls } from 'ts/enums';
 import { Item } from 'ts/interfaces';
 
 function ItemTable({ items }: { items: Item[] }) {
+    const { t } = useTranslation('translation', { keyPrefix: 'item.table' });
+    const { customFields } = items[0];
+
     const navigate = useNavigate();
     return (
         <>
@@ -20,10 +26,22 @@ function ItemTable({ items }: { items: Item[] }) {
                     <MuiTable sx={{ minWidth: 640 }} aria-label="item table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="left">Image</TableCell>
-                                <TableCell align="left">Title</TableCell>
-                                <TableCell align="left">Likes</TableCell>
-                                <TableCell align="left">Created at</TableCell>
+                                <TableCell align="left">{t('image')}</TableCell>
+                                <TableCell align="left">{t('title')}</TableCell>
+                                <TableCell align="left">{t('likes')}</TableCell>
+                                <TableCell align="left">{t('createdAt')}</TableCell>
+                                {customFields?.map((field) => {
+                                    if (
+                                        field.type !== 'textarea' &&
+                                        field.type !== 'boolean'
+                                    ) {
+                                        return (
+                                            <TableCell key={field.id} align="left">
+                                                {field.label}
+                                            </TableCell>
+                                        );
+                                    }
+                                })}
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -44,8 +62,20 @@ function ItemTable({ items }: { items: Item[] }) {
                                     <TableCell align="left">{row.title}</TableCell>
                                     <TableCell align="left">{row.likes.length}</TableCell>
                                     <TableCell align="left">
-                                        {new Date(row.createdAt).toLocaleDateString()}
+                                        {new Date(row.createdAt).toLocaleString()}
                                     </TableCell>
+                                    {customFields?.map((field) => {
+                                        if (
+                                            field.type !== 'textarea' &&
+                                            field.type !== 'boolean'
+                                        ) {
+                                            return (
+                                                <TableCell key={field.id} align="left">
+                                                    {String(field.value) || '-'}
+                                                </TableCell>
+                                            );
+                                        }
+                                    })}
                                 </TableRow>
                             ))}
                         </TableBody>
