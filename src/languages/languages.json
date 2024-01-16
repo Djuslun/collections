@@ -77,8 +77,12 @@
                 "edit": "Edit"
             },
             "item": {
-              "fromCollection": "From collection",
-              "createdBy": "Created by"
+                "fromCollection": "From collection",
+                "createdBy": "Created by"
+            },
+            "emptyState": {
+                "collection": "There is no collections.",
+                "item": "There is no items."
             }
         }
     },
@@ -160,8 +164,12 @@
                 "edit": "Редактировать"
             },
             "item": {
-              "fromCollection": "Из коллекции",
-              "createdBy": "Создал(а)"
+                "fromCollection": "Из коллекции",
+                "createdBy": "Создал(а)"
+            },
+            "emptyState": {
+                "collection": "Коллекций нет. Но вы держитесь там)",
+                "item": "Элементов пока еще нет. Но вы можете их создать "
             }
         }
     }
