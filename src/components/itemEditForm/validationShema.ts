@@ -7,7 +7,7 @@ const validationSchema = Yup.object({
         .trim()
         .required('Requiered'),
     description: Yup.string().min(0, ''),
-    // tags: Yup.array().min(1),
+    tags: Yup.array().min(1),
     customFields: Yup.array(),
 });
 

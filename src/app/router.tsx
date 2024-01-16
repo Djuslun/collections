@@ -11,6 +11,7 @@ const ProfilePage = lazy(() => import('pages/profile/profilePage'));
 const NewCollecton = lazy(() => import('pages/newCollection/newCollectionPage'));
 const NewItemPage = lazy(() => import('pages/newItem/newItemPage'));
 const EditCollectionPage = lazy(() => import('pages/editCollection/editCollectiomPage'));
+const EditItemPage = lazy(() => import('pages/editItem/editItemPage'));
 
 function Router() {
     return (
@@ -27,6 +28,7 @@ function Router() {
                     element={<EditCollectionPage />}
                 />
                 <Route path={`${ClientUrls.item}/:id`} element={<ItemPage />} />
+                <Route path={`${ClientUrls.item}/:id/edit`} element={<EditItemPage />} />
                 <Route path={ClientUrls.profile} element={<ProfilePage />} />
                 <Route path={ClientUrls.newCollection} element={<NewCollecton />} />
                 <Route path={ClientUrls.newItem} element={<NewItemPage />} />
