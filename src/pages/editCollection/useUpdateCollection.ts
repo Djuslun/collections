@@ -18,7 +18,7 @@ const useUpdateCollection = (collection: Collection, userId: string) => {
             _id,
             title,
             userId,
-            imageUrl,
+            imageUrl: value.image ? imageUrl : collection.imageUrl,
             description,
             collectionTheme,
             itemCount,

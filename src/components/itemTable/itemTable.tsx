@@ -57,14 +57,20 @@ function ItemTable({ items }: { items: Item[] }) {
                                     }
                                 >
                                     <TableCell align="left">
-                                        <img src={row.imageUrl} alt="item" />
+                                        <img
+                                            src={row.imageUrl}
+                                            alt="item"
+                                            width={80}
+                                            height={80}
+                                            className="w-20 h-20 object-contain"
+                                        />
                                     </TableCell>
                                     <TableCell align="left">{row.title}</TableCell>
                                     <TableCell align="left">{row.likes.length}</TableCell>
                                     <TableCell align="left">
                                         {new Date(row.createdAt).toLocaleString()}
                                     </TableCell>
-                                    {customFields?.map((field) => {
+                                    {row.customFields?.map((field) => {
                                         if (
                                             field.type !== 'textarea' &&
                                             field.type !== 'boolean'

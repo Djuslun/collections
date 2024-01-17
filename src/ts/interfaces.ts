@@ -71,6 +71,19 @@ export interface ItemRequestBody extends ItemSubmitFormValues {
 
 export interface Item extends DatabaseModel, ItemRequestBody {}
 
+export interface CommentFormValues {
+    comment: string;
+}
+
+export interface CommentRequestBody extends CommentFormValues {
+    itemId: string | undefined;
+    userId: string | undefined;
+    userName: string | undefined;
+    userAvatar: string | undefined;
+}
+
+export interface IComment extends DatabaseModel, CommentRequestBody {}
+
 export type {
     WithChidlren,
     Option,

@@ -37,7 +37,7 @@ function ItemInfo({ item }: { item: Item }) {
                     </div>
                 </div>
             </div>
-            <ul className="flex flex-col gap-2 border-t border-gray-300 pt-2">
+            <ul className="flex flex-col gap-2 border-y border-gray-400 py-2">
                 {item.customFields.map((field) => (
                     <li key={field.id}>
                         <ItemCustomField {...field} />

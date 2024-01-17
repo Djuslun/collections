@@ -86,9 +86,15 @@
                     "createdAt": "Created at"
                 }
             },
+            "comment": {
+                "commentFormPlaceholder": "Enter comment",
+                "commented": "commented",
+                "commentedAt": "at"
+            },
             "emptyState": {
                 "collection": "There is no collections.",
-                "item": "There is no items."
+                "item": "There is no items.",
+                "comment": "There is no comments."
             }
         }
     },
@@ -179,9 +185,15 @@
                     "createdAt": "Создано"
                 }
             },
+            "comment": {
+                "commentFormPlaceholder": "Введите комментарий",
+                "commented": "прокомментировал(а)",
+                "commentedAt": "в"
+            },
             "emptyState": {
                 "collection": "Коллекций нет. Но вы держитесь там)",
-                "item": "Элементов пока еще нет. Но вы можете их создать "
+                "item": "Элементов пока еще нет. Но вы можете их создать ",
+                "comment": "Комментариев пока еще нет."
             }
         }
     }

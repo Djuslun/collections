@@ -19,7 +19,7 @@ const useUpdateItemForm = (item: Item) => {
         const updatedItem = {
             ...item,
             tags,
-            imageUrl: url,
+            imageUrl: value.image ? url : item.imageUrl,
             title,
             description,
             customFields,

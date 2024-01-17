@@ -12,7 +12,7 @@ function ItemCustomField({ label, value, type }: ItemCustomFieldProps) {
         }
 
         if (type === 'date') {
-            return new Date(String(value)).toLocaleString();
+            return new Date(String(value)).toLocaleDateString();
         }
 
         if (type === 'boolean') {

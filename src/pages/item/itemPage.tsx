@@ -9,11 +9,13 @@ import Collapse from 'ui/collapse';
 import Container from 'ui/container';
 import LoaderWrapper from 'ui/loader/loaderWrapper';
 import ItemActions from './itemActions';
+import ItemCommentForm from './itemCommentForm';
+import ItemCommentList from './itemCommentList';
 
 function ItemPage() {
     const { id } = useParams() as { id: string };
     const { data: item, isLoading, isSuccess } = useGetItemByIdQuery(id);
-    const { user } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
 
     return (
         <LoaderWrapper isLoading={isLoading}>
@@ -22,6 +24,7 @@ function ItemPage() {
                     {(item) => (
                         <>
                             <ItemInfo item={item} />
+                            <ItemCommentList itemId={id} />
                             <OwnerEntitiOnly userId={user?.sub} entitiId={item.userId}>
                                 <Collapse>
                                     <ItemActions item={item} />
@@ -30,6 +33,11 @@ function ItemPage() {
                         </>
                     )}
                 </DataRequired>
+                <ItemCommentForm
+                    isAuthenticated={isAuthenticated}
+                    itemId={item?._id || ''}
+                    user={user}
+                />
             </Container>
         </LoaderWrapper>
     );
