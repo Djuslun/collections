@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import SendIcon from '@mui/icons-material/Send';
 import { Field, Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
@@ -40,12 +39,14 @@ function CommentEditForm({
                     />
                     <button
                         type="submit"
-                        className={`bg-transparent hover:bg-transparent absolute right-5 top-1/2 -translate-y-1/2 ${
+                        className={`text-3xl leading-none bg-transparent hover:bg-transparent absolute right-5 top-1/2 -translate-y-1/2 ${
                             isValid ? 'hover:scale-125 transition-all' : ''
                         }`}
+                        aria-label="submit comment"
                         disabled={!isValid}
                     >
                         <SendIcon
+                            fontSize="inherit"
                             className={`${
                                 isValid
                                     ? 'text-blue-600 dark:hover:fill-blue-400 hover:fill-blue-800 '

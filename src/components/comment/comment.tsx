@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useAuth0 } from '@auth0/auth0-react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useTranslation } from 'react-i18next';
@@ -34,8 +33,13 @@ function Comment({
                 </div>
             </div>
             {user?.sub === comment.userId && (
-                <button type="button" className="hover:scale-125 transition-all">
+                <button
+                    aria-label="delete comment"
+                    type="button"
+                    className="hover:scale-125 transition-all text-3xl leading-none"
+                >
                     <DeleteIcon
+                        fontSize="inherit"
                         onClick={() => deleteComment(comment._id)}
                         className="cursor-pointer text-blue-600 dark:hover:fill-blue-400 hover:fill-blue-800 "
                     />
