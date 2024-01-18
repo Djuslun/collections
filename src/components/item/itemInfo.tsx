@@ -10,6 +10,7 @@ import ItemLike from './itemLike';
 function ItemInfo({ item }: { item: Item }) {
     const { t } = useTranslation('translation', { keyPrefix: 'item' });
     const { user } = useAuth0();
+
     return (
         <section>
             <div className="info-section">

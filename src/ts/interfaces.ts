@@ -1,5 +1,6 @@
+import { User } from '@auth0/auth0-react';
 import { ReactNode } from 'react';
-import { CustomFieldTypes } from 'ts/types';
+import { CustomFieldTypes, TUserRole } from 'ts/types';
 
 interface DatabaseModel {
     _id: string;
@@ -84,6 +85,10 @@ export interface CommentRequestBody extends CommentFormValues {
 
 export interface IComment extends DatabaseModel, CommentRequestBody {}
 
+interface IUser extends User {
+    role: TUserRole[];
+}
+
 export type {
     WithChidlren,
     Option,
@@ -91,4 +96,5 @@ export type {
     CollectionFormValues,
     Collection,
     CollectionRequestBody,
+    IUser,
 };
