@@ -71,6 +71,13 @@ function ItemTable({ items }: { items: Item[] }) {
                                         {new Date(row.createdAt).toLocaleString()}
                                     </TableCell>
                                     {row.customFields?.map((field) => {
+                                      if(field.type === 'date' && field.value) {
+                                        return (
+                                          <TableCell key={field.id} align="left">
+                                              {new Date(field.value as string).toLocaleDateString()}
+                                          </TableCell>
+                                      );
+                                      }
                                         if (
                                             field.type !== 'textarea' &&
                                             field.type !== 'boolean'
