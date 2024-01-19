@@ -22,7 +22,7 @@ function Header() {
                     <div className="flex items-center gap-2">
                         <LanguageSwitch />
                         <ColorModeButton />
-                        <div className="gap-2 hidden md:flex">
+                        <div className="gap-2 hidden lg:flex">
                             {isAuthenticated && <ProfilePageButton />}
                             <AuthButton />
                         </div>

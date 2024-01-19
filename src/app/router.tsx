@@ -12,6 +12,7 @@ const NewCollecton = lazy(() => import('pages/newCollection/newCollectionPage'))
 const NewItemPage = lazy(() => import('pages/newItem/newItemPage'));
 const EditCollectionPage = lazy(() => import('pages/editCollection/editCollectiomPage'));
 const EditItemPage = lazy(() => import('pages/editItem/editItemPage'));
+const AdminPage = lazy(() => import('pages/admin/adminPage'));
 
 function Router() {
     return (
@@ -32,6 +33,7 @@ function Router() {
                 <Route path={ClientUrls.profile} element={<ProfilePage />} />
                 <Route path={ClientUrls.newCollection} element={<NewCollecton />} />
                 <Route path={ClientUrls.newItem} element={<NewItemPage />} />
+                <Route path={ClientUrls.admin} element={<AdminPage />} />
                 <Route path="*" element={<HomePage />} />
             </Routes>
         </Suspense>

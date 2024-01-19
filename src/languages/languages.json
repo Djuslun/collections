@@ -4,7 +4,8 @@
             "header": {
                 "nav": {
                     "homePage": "Home",
-                    "collectionsPage": "Collections"
+                    "collectionsPage": "Collections",
+                    "admin": "Admin"
                 },
                 "login": "Log in",
                 "logout": "Log out",
@@ -103,7 +104,8 @@
             "header": {
                 "nav": {
                     "homePage": "Главная",
-                    "collectionsPage": "Коллекции"
+                    "collectionsPage": "Коллекции",
+                    "admin": "Администратор"
                 },
                 "login": "Войти",
                 "logout": "Выйти",

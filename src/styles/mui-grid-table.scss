@@ -1,0 +1,24 @@
+@import './tailwind.scss';
+
+.user-table-row.user-table-row-styles {
+  .MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within  {
+      @apply outline-none;
+  }
+
+  .MuiDataGrid-cell {
+    @apply py-2;
+  }
+}
+
+.user-table.user-table-styles {
+  .MuiDataGrid-columnHeader:focus-within  {
+    @apply outline-none;
+  }
+  .MuiDataGrid-main {
+    @apply bg-main rounded-sm;
+    }
+
+  .MuiIconButton-root {
+    @apply text-main;
+  }
+}
