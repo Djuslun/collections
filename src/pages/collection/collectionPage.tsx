@@ -5,7 +5,7 @@ import { useGetItemsByCollectionIdQuery } from 'store/api/itemApiSlice';
 import NewItemButton from 'pages/collection/newItemButton';
 import CollectionInfo from 'components/collection/collectionInfo';
 import DataRequired from 'components/dataRequired/dataRequiredWrapper';
-import ItemTable from 'components/itemTable/itemTable';
+import ItemTableGrid from 'components/itemTable/itemTableGrid';
 import OwnerEntitiOnly from 'components/ownerEntityOnly/ownerEntityOnly';
 import { Collection, Item } from 'ts/interfaces';
 import Collapse from 'ui/collapse';
@@ -46,7 +46,7 @@ function CollectionPage() {
                     )}
                 </DataRequired>
                 <DataRequired<Item[]> data={items} isSuccess={isItemsSucces}>
-                    {(items) => <ItemTable items={items} />}
+                    {(items) => <ItemTableGrid items={items} />}
                 </DataRequired>
             </Container>
         </LoaderWrapper>

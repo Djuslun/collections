@@ -25,7 +25,7 @@ const columns: GridColDef[] = [
     {
         field: 'name',
         headerName: 'Name',
-        flex: 0.5,
+        flex: 1,
         minWidth: 200,
     },
     { field: 'email', headerName: 'Email', flex: 1, minWidth: 200 },

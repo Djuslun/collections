@@ -1,8 +1,11 @@
 @import './tailwind.scss';
 
 .user-table-row.user-table-row-styles {
+  &:has(.MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within) {
+    @apply outline dark:outline-white outline-black  shadow shadow-sm shadow-gray-500 ;
+  }
   .MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within  {
-      @apply outline-none;
+      @apply outline-none ;
   }
 
   .MuiDataGrid-cell {
@@ -20,5 +23,18 @@
 
   .MuiIconButton-root {
     @apply text-main;
+  }
+}
+.MuiPaper-root.MuiPaper-elevation {
+  @apply bg-main text-main;
+}
+
+.MuiInputBase-input.MuiInput-input, .MuiFormLabel-root.MuiInputLabel-root, .MuiSvgIcon-root  {
+  @apply text-main;
+}
+
+.MuiNativeSelect-select.MuiNativeSelect-standard {
+  option {
+    @apply bg-main;
   }
 }
