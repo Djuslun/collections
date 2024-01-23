@@ -27,6 +27,15 @@ const userSlice = createSlice({
             state.user = action.payload;
             state.isAdmin = action.payload.role.includes('Admin');
         },
+        clearUser: (state) => {
+            state.user = initialState.user;
+            state.isAdmin = false;
+            state.token = '';
+        },
+        setIsAdminToFalse: (state) => {
+            state.isAdmin = false;
+            state.user.role = state.user.role.filter((role) => role !== 'Admin');
+        },
     },
     extraReducers: (builder) => {
         builder.addDefaultCase(() => {});
@@ -37,4 +46,4 @@ const { actions, reducer: userReducer } = userSlice;
 
 export default userReducer;
 
-export const { setAccsesToken, setUser } = actions;
+export const { setAccsesToken, setUser, setIsAdminToFalse, clearUser } = actions;

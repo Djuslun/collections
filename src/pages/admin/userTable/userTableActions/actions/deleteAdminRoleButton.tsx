@@ -1,14 +1,14 @@
 import { useDeleteUserAdminRoleMutation } from 'store/api/userApiSlice';
 import Loader from 'ui/loader/loader';
 
-function DeleteAdminRoleButton({ userId }: { userId: string }) {
+function DeleteAdminRoleButton({ userIds }: { userIds: string[] }) {
     const [deleteAdminRole, { isLoading }] = useDeleteUserAdminRoleMutation();
     return (
         <>
             <button
                 type="button"
                 className="button border-with-shadow"
-                onClick={() => deleteAdminRole(userId)}
+                onClick={() => deleteAdminRole(userIds)}
             >
                 Delete admin role
             </button>

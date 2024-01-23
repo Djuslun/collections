@@ -1,14 +1,22 @@
+import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 
-const validationSchema = Yup.object({
-    title: Yup.string()
-        .min(3, 'Min 3 char')
-        .max(30, `Max 30 char`)
-        .trim()
-        .required('Requiered'),
-    description: Yup.string().min(0, ''),
-    tags: Yup.array().min(1),
-    customFields: Yup.array(),
-});
+const useValidationShema = () => {
+    const { t } = useTranslation('translation', {
+        keyPrefix: 'form',
+    });
 
-export default validationSchema;
+    const validationSchema = Yup.object({
+        title: Yup.string()
+            .trim()
+            .max(30, t('validateMaxSymbols'))
+            .required(t('validateRequired')),
+        description: Yup.string().min(0, ''),
+        tags: Yup.array().min(1, t('validateRequired')),
+        customFields: Yup.array(),
+    });
+
+    return validationSchema;
+};
+
+export default useValidationShema;

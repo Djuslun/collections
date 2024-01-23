@@ -1,5 +1,7 @@
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useNavigate } from 'react-router-dom';
 import { useCreateItemMutation } from 'store/api/itemApiSlice';
+import useErrorHandle from 'hooks/useErrorHadle';
 import useImageUpload from 'hooks/useImageUpload';
 import { ItemFormValues } from 'ts/interfaces';
 
@@ -15,8 +17,11 @@ const useSubmitItemForm = (
         isLoading: isImageLoading,
         isSuccess: isImageSuccess,
     } = useImageUpload();
-    const [createItem, { isLoading, isSuccess, isError }] = useCreateItemMutation();
+    const [createItem, { isLoading: isItemCreating }] = useCreateItemMutation();
     const navigate = useNavigate();
+    const handleError = useErrorHandle();
+
+    const isLoading = isImageLoading || isItemCreating;
 
     const handleSubmit = async (value: ItemFormValues) => {
         const { tags, image, title, description, customFields } = value;
@@ -36,11 +41,11 @@ const useSubmitItemForm = (
 
         createItem(item)
             .unwrap()
-            .catch((e) => console.log(e));
+            .catch((e: FetchBaseQueryError) => handleError(e));
         navigate(-1);
     };
 
-    return { handleSubmit };
+    return { handleSubmit, isLoading };
 };
 
 export default useSubmitItemForm;

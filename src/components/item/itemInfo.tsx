@@ -1,7 +1,7 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import MDEditor from '@uiw/react-md-editor';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from 'store/useRedux';
 import { ClientUrls } from 'ts/enums';
 import { Item } from 'ts/interfaces';
 import ItemCustomField from './itemCustomField';
@@ -9,7 +9,7 @@ import ItemLike from './itemLike';
 
 function ItemInfo({ item }: { item: Item }) {
     const { t } = useTranslation('translation', { keyPrefix: 'item' });
-    const { user } = useAuth0();
+    const { user } = useAppSelector(store => store.user);
 
     return (
         <section>

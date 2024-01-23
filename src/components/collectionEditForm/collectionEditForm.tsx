@@ -19,7 +19,7 @@ import { THandleSubmitCollectionForm } from 'ts/types';
 import Container from 'ui/container';
 import FormButtons from 'ui/formButtons/formButtons';
 import Loader from 'ui/loader/loader';
-import validationSchema from './validationShema';
+import useValidationSchema from './validationShema';
 
 function CollectiomEditForm({
     initialValues,
@@ -34,6 +34,7 @@ function CollectiomEditForm({
         keyPrefix: 'form',
     });
     const options = useTranslateSelectOptions(collectionThemes, 'collectionThemes');
+    const validationSchema = useValidationSchema();
 
     return (
         <Container>
@@ -44,7 +45,7 @@ function CollectiomEditForm({
             >
                 <Form>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-1">
                             <FormikField<IInputFormikField<TBaseComponent>>
                                 label={t('collectionForm.title')}
                                 name="title"

@@ -1,6 +1,6 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import { useParams } from 'react-router-dom';
 import { useGetItemByIdQuery } from 'store/api/itemApiSlice';
+import { useAppSelector } from 'store/useRedux';
 import DataRequired from 'components/dataRequired/dataRequiredWrapper';
 import ItemInfo from 'components/item/itemInfo';
 import OwnerEntitiOnly from 'components/ownerEntityOnly/ownerEntityOnly';
@@ -15,7 +15,7 @@ import ItemCommentList from './itemCommentList';
 function ItemPage() {
     const { id } = useParams() as { id: string };
     const { data: item, isLoading, isSuccess } = useGetItemByIdQuery(id);
-    const { user, isAuthenticated } = useAuth0();
+    const { user, isAdmin } = useAppSelector((store) => store.user);
 
     return (
         <LoaderWrapper isLoading={isLoading}>
@@ -25,7 +25,11 @@ function ItemPage() {
                         <>
                             <ItemInfo item={item} />
                             <ItemCommentList itemId={id} />
-                            <OwnerEntitiOnly userId={user?.sub} entitiId={item.userId}>
+                            <OwnerEntitiOnly
+                                userId={user?.sub}
+                                entitiId={item.userId}
+                                isAdmin={isAdmin}
+                            >
                                 <Collapse>
                                     <ItemActions item={item} />
                                 </Collapse>
@@ -34,7 +38,7 @@ function ItemPage() {
                     )}
                 </DataRequired>
                 <ItemCommentForm
-                    isAuthenticated={isAuthenticated}
+                    isAuthenticated={!!user?.sub}
                     itemId={item?._id || ''}
                     user={user}
                 />

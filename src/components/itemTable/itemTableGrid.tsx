@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import EmptyState from 'components/emptyStates/emptyState';
 import { ClientUrls } from 'ts/enums';
 import { Item } from 'ts/interfaces';
+import useLocalTextTable from '../../hooks/useLocalTextTable';
 import useItemTableSettings from './useItemTableSettings';
-import useLocalTextTable from './useLocalTextTable';
 
 function ItemTableGrid({ items }: { items: Item[] }) {
     const localeText = useLocalTextTable();

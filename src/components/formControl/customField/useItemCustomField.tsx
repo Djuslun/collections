@@ -1,10 +1,13 @@
 /* eslint-disable react/jsx-no-useless-fragment */
+
 /* eslint-disable consistent-return */
+
 /* eslint-disable arrow-body-style */
 import Switch from '@mui/material/Switch';
 import MDEditor from '@uiw/react-md-editor';
 import { FieldProps } from 'formik';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ICustomFieldItem } from 'ts/interfaces';
 import { CustomFieldTypes } from 'ts/types';
 
@@ -22,6 +25,7 @@ type TFormType = FieldProps['form'];
 
 const useItemCustomField = (field: TFieldType, form: TFormType): IUseItemCustomField => {
     const [customFields, setCustomFields] = useState<ICustomFieldItem[]>(field.value);
+    const { t } = useTranslation('translation', { keyPrefix: 'form.itemForm' });
 
     useEffect(() => {
         form.setFieldValue(field.name, customFields);
@@ -47,13 +51,17 @@ const useItemCustomField = (field: TFieldType, form: TFormType): IUseItemCustomF
         switch (type) {
             case 'boolean':
                 return (
-                    <Switch
-                        className="switch"
-                        onChange={(event) => {
-                            handleChange(id, event.target.checked);
-                        }}
-                        checked={!!value}
-                    />
+                    <div>
+                        <span>{t('no')}</span>
+                        <Switch
+                            className="switch"
+                            onChange={(event) => {
+                                handleChange(id, event.target.checked);
+                            }}
+                            checked={!!value}
+                        />
+                        <span>{t('yes')}</span>
+                    </div>
                 );
             case 'number':
                 return (

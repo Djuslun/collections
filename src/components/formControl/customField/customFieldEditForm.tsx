@@ -3,6 +3,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { FieldProps } from 'formik';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import EmptyState from 'components/emptyStates/emptyState';
 import CustomField from './customField';
 import useCustomFields from './useCustomField';
 import useDisableCustomField from './useDisableCustomField';
@@ -34,15 +35,19 @@ function CustomFieldEditForm({ field, form }: FieldProps) {
                 </Button>
             </div>
             <div className="flex flex-col gap-3">
-                {customFields?.map((field) => (
-                    <CustomField
-                        key={field.id}
-                        handleChange={changeCustomField}
-                        field={field}
-                        handleDelete={deleteCustomField}
-                        edit={getDisabledStatus(field.id)}
-                    />
-                ))}
+                {customFields.length ? (
+                    customFields?.map((field) => (
+                        <CustomField
+                            key={field.id}
+                            handleChange={changeCustomField}
+                            field={field}
+                            handleDelete={deleteCustomField}
+                            edit={getDisabledStatus(field.id)}
+                        />
+                    ))
+                ) : (
+                    <EmptyState translationKey="customField" />
+                )}
             </div>
         </div>
     );

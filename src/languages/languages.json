@@ -49,12 +49,16 @@
                     "number": "number",
                     "textarea": "text (with Markdown support)",
                     "boolean": "boolean (yes/no)",
-                    "date": "date"
+                    "date": "date",
+                    "yes": "Yes",
+                    "no": "No"
                 },
                 "titlePlaceholder": "Enter a title",
                 "confirm": "Сonfirm",
                 "cancel": "Сancel",
-                "dropZone": "Upload or drop a file right here"
+                "dropZone": "Upload or drop a file right here",
+                "validateRequired": "This field is required",
+                "validateMaxSymbols": "No more than 30 characters"
             },
             "collectionThemes": {
                 "work": "Work",
@@ -95,7 +99,8 @@
             "emptyState": {
                 "collection": "There is no collections.",
                 "item": "There is no items.",
-                "comment": "There is no comments."
+                "comment": "There is no comments.",
+                "customField": "There is no custom fields. You can create them"
             },
             "tableMenu": {
                 "filterOperatorContains": "Contains",
@@ -130,6 +135,13 @@
                 "columnsPanelShowAllButton": "Show all",
                 "columnsPanelHideAllButton": "Hide all",
                 "noResultsOverlayLabel": "No results found."
+            },
+            "userTable": {
+                "avatar": "Avatar",
+                "checkBox": "Checkbox Selection",
+                "name": "Name",
+                "admin": "Admin",
+                "email": "Email"
             }
         }
     },
@@ -183,12 +195,16 @@
                     "number": "число",
                     "textarea": "текст (с поддержкой разметки Markdown)",
                     "boolean": "логическое (да/нет)",
-                    "date": "дата"
+                    "date": "дата",
+                    "yes": "Да",
+                    "no": "Нет"
                 },
                 "titlePlaceholder": "Введите название",
                 "confirm": "Потвердить",
                 "cancel": "Отмена",
-                "dropZone": "Загрузите или перетащите изображение сюда"
+                "dropZone": "Загрузите или перетащите изображение сюда",
+                "validateRequired": "Это поле обязательно",
+                "validateMaxSymbols": "Не больше 30 символов"
             },
             "collectionThemes": {
                 "work": "Работа",
@@ -229,7 +245,8 @@
             "emptyState": {
                 "collection": "Коллекций нет. Но вы держитесь там)",
                 "item": "Элементов пока еще нет. Но вы можете их создать ",
-                "comment": "Комментариев пока еще нет."
+                "comment": "Комментариев пока еще нет.",
+                "customField": "Кастомных полей пока нет. Вы сожете их создать"
             },
             "tableMenu": {
                 "filterOperatorContains": "Содержит",
@@ -264,6 +281,13 @@
                 "columnsPanelShowAllButton": "Показать все",
                 "columnsPanelHideAllButton": "Спрятать все",
                 "noResultsOverlayLabel": "Результаты не найдены."
+            },
+            "userTable": {
+                "avatar": "Аватар",
+                "checkBox": "Выбор чек-боксами",
+                "name": "Имя",
+                "admin": "Администратор",
+                "email": "Эл. почта"
             }
         }
     }

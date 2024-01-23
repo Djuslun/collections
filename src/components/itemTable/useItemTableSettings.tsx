@@ -54,36 +54,37 @@ const useItemTableSettings = (items: Item[]) => {
         },
     ];
 
-    const customFields = items[0].customFields.filter(
+    const customFields = items[0]?.customFields.filter(
         (field) => field.type !== 'boolean' && field.type !== 'textarea'
     );
 
-    const customFildsColumns: GridColDef[] = customFields.map((field) => {
-        if (field.type !== 'boolean' && field.type !== 'textarea') {
-            return {
-                field: field.label,
-                headerName: field.label,
-                flex: 1,
-                minWidth: 150,
-                valueGetter: (params: GridValueGetterParams<Item>) => {
-                    const customField = params.row.customFields.find(
-                        (field: ICustomFieldItem) => field.label === params.field
-                    );
-                    if (customField?.type === 'date' && customField?.value) {
-                        return new Date(customField?.value as string);
-                    }
-                    if (customField?.type === 'number' && customField?.value) {
-                        return Number(customField?.value);
-                    }
-                    if (customField?.type === 'string' && customField?.value) {
-                        return customField?.value;
-                    }
-                },
-                type: field.type,
-            } as GridColDef;
-        }
-        return {} as GridColDef;
-    });
+    const customFildsColumns: GridColDef[] =
+        customFields?.map((field) => {
+            if (field.type !== 'boolean' && field.type !== 'textarea') {
+                return {
+                    field: field.label,
+                    headerName: field.label,
+                    flex: 1,
+                    minWidth: 150,
+                    valueGetter: (params: GridValueGetterParams<Item>) => {
+                        const customField = params.row.customFields.find(
+                            (field: ICustomFieldItem) => field.label === params.field
+                        );
+                        if (customField?.type === 'date' && customField?.value) {
+                            return new Date(customField?.value as string);
+                        }
+                        if (customField?.type === 'number' && customField?.value) {
+                            return Number(customField?.value);
+                        }
+                        if (customField?.type === 'string' && customField?.value) {
+                            return customField?.value;
+                        }
+                    },
+                    type: field.type,
+                } as GridColDef;
+            }
+            return {} as GridColDef;
+        }) || [];
 
     return [...columns, ...customFildsColumns];
 };

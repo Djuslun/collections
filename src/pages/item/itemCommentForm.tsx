@@ -1,6 +1,8 @@
 import { User } from '@auth0/auth0-react';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useCreateCommentMutation } from 'store/api/commentApiSlice';
 import CommentEditForm from 'components/comment/commentEditForm';
+import useErrorHandle from 'hooks/useErrorHadle';
 import LoaderWrapper from 'ui/loader/loaderWrapper';
 
 function ItemCommentForm({
@@ -14,6 +16,7 @@ function ItemCommentForm({
 }) {
     const [createComment, { isLoading: isCommentCreating }] = useCreateCommentMutation();
     // TODO вынести в кастомный хук
+    const handleError = useErrorHandle();
 
     const handleSubmitComment = async (values: string) => {
         const comment = {
@@ -24,7 +27,9 @@ function ItemCommentForm({
             comment: values,
         };
 
-        createComment(comment).unwrap();
+        createComment(comment)
+            .unwrap()
+            .catch((e: FetchBaseQueryError) => handleError(e));
     };
 
     return (

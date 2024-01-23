@@ -1,6 +1,6 @@
 import { Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
-import { useCreateTagMutation, useGetAllTagsQuery } from 'store/api/tagApiSlice';
+import { useGetAllTagsQuery } from 'store/api/tagApiSlice';
 import CustomFieldForItem from 'components/formControl/customField/customFieldsItemForm';
 import FormikCreatebleSelect from 'components/formControl/formikCreatebleSelect';
 import FormikDropZone from 'components/formControl/formikDropZone';
@@ -18,7 +18,8 @@ import { THandleSubmitItemForm } from 'ts/types';
 import FormButtons from 'ui/formButtons/formButtons';
 import Loader from 'ui/loader/loader';
 import LoaderWrapper from 'ui/loader/loaderWrapper';
-import validationSchema from './validationShema';
+import useCreateTag from './useCreateTag';
+import useValidationSchema from './validationShema';
 
 function ItemEditForm({
     initialValues,
@@ -32,23 +33,10 @@ function ItemEditForm({
     const { t } = useTranslation('translation', {
         keyPrefix: 'form',
     });
+    const validationSchema = useValidationSchema();
 
     const { data: options, isLoading: isTagsLoading } = useGetAllTagsQuery();
-    const [createTag, { isLoading: isTagsCreating }] = useCreateTagMutation();
-
-    const handleCreateTags = async (tags: string[]) => {
-        const newTags: string[] = [];
-        const oldTags: string[] = [];
-        tags.forEach((tag) => {
-            if (!options?.some((startTags) => startTags._id === tag)) {
-                newTags.push(tag);
-            } else {
-                oldTags.push(tag);
-            }
-        });
-        const createdTag = await createTag(newTags).unwrap();
-        return [...oldTags, ...createdTag.map((tag) => tag._id)];
-    };
+    const { handleCreateTags, isTagsCreating } = useCreateTag(options);
 
     return (
         <LoaderWrapper isLoading={isTagsLoading}>
@@ -62,7 +50,7 @@ function ItemEditForm({
             >
                 <Form>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-1">
                             <FormikField<IInputFormikField<TBaseComponent>>
                                 label={t('itemForm.title')}
                                 name="title"

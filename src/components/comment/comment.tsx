@@ -1,6 +1,6 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useTranslation } from 'react-i18next';
+import { useAppSelector } from 'store/useRedux';
 import { IComment } from 'ts/interfaces';
 
 function Comment({
@@ -10,9 +10,9 @@ function Comment({
     comment: IComment;
     deleteComment: (id: string) => void;
 }) {
-    const { user } = useAuth0();
     const { t } = useTranslation('translation', { keyPrefix: 'comment' });
     const date = new Date(comment.createdAt).toLocaleString().split(',');
+    const { user } = useAppSelector((store) => store.user);
 
     return (
         <div className="flex items-center border-with-shadow  p-2 my-2">
@@ -37,10 +37,10 @@ function Comment({
                     aria-label="delete comment"
                     type="button"
                     className="hover:scale-125 transition-all text-3xl leading-none"
+                    onClick={() => deleteComment(comment._id)}
                 >
                     <DeleteIcon
                         fontSize="inherit"
-                        onClick={() => deleteComment(comment._id)}
                         className="cursor-pointer text-blue-600 dark:hover:fill-blue-400 hover:fill-blue-800 "
                     />
                 </button>

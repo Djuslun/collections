@@ -1,8 +1,21 @@
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridRowSelectionModel } from '@mui/x-data-grid';
+import useLocalTextTable from 'hooks/useLocalTextTable';
 import { IUser } from 'ts/interfaces';
-import columns from './tableSettings';
+import { TSetState } from 'ts/types';
+import useTableSettings from './useTableSettings';
 
-function Table({ userData }: { userData: IUser[] }) {
+function Table({
+    userData,
+    userIds,
+    setUserIds,
+}: {
+    userData: IUser[];
+    userIds: GridRowSelectionModel | string[];
+    setUserIds: TSetState<GridRowSelectionModel | string[]>;
+}) {
+    const localeText = useLocalTextTable();
+    const columns = useTableSettings();
+
     return (
         <div className=" m-auto ">
             <DataGrid
@@ -14,6 +27,10 @@ function Table({ userData }: { userData: IUser[] }) {
                 hideFooter
                 getRowHeight={() => 'auto'}
                 className="user-table user-table-styles"
+                checkboxSelection
+                localeText={localeText}
+                onRowSelectionModelChange={setUserIds}
+                rowSelectionModel={userIds}
             />
         </div>
     );

@@ -1,5 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import AdminRoleRequired from 'components/wrappers/adminRoleRequired';
+import AuthRequired from 'components/wrappers/authRequiered';
 import { ClientUrls } from 'ts/enums';
 import Loader from 'ui/loader/loader';
 
@@ -26,14 +28,53 @@ function Router() {
                 />
                 <Route
                     path={`${ClientUrls.collection}/:id/edit`}
-                    element={<EditCollectionPage />}
+                    element={
+                        <AuthRequired>
+                            <EditCollectionPage />
+                        </AuthRequired>
+                    }
                 />
                 <Route path={`${ClientUrls.item}/:id`} element={<ItemPage />} />
-                <Route path={`${ClientUrls.item}/:id/edit`} element={<EditItemPage />} />
-                <Route path={ClientUrls.profile} element={<ProfilePage />} />
-                <Route path={ClientUrls.newCollection} element={<NewCollecton />} />
-                <Route path={ClientUrls.newItem} element={<NewItemPage />} />
-                <Route path={ClientUrls.admin} element={<AdminPage />} />
+                <Route
+                    path={`${ClientUrls.item}/:id/edit`}
+                    element={
+                        <AuthRequired>
+                            <EditItemPage />
+                        </AuthRequired>
+                    }
+                />
+                <Route
+                    path={ClientUrls.profile}
+                    element={
+                        <AuthRequired>
+                            <ProfilePage />
+                        </AuthRequired>
+                    }
+                />
+                <Route
+                    path={ClientUrls.newCollection}
+                    element={
+                        <AuthRequired>
+                            <NewCollecton />
+                        </AuthRequired>
+                    }
+                />
+                <Route
+                    path={ClientUrls.newItem}
+                    element={
+                        <AuthRequired>
+                            <NewItemPage />
+                        </AuthRequired>
+                    }
+                />
+                <Route
+                    path={ClientUrls.admin}
+                    element={
+                        <AdminRoleRequired>
+                            <AdminPage />
+                        </AdminRoleRequired>
+                    }
+                />
                 <Route path="*" element={<HomePage />} />
             </Routes>
         </Suspense>

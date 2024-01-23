@@ -26,17 +26,27 @@ export const userApiSlice = api.injectEndpoints({
             }),
             providesTags: ['User'],
         }),
-        addUserAdminRole: builder.mutation<void, string>({
-            query: (userId) => ({
-                url: `${Endpoints.users}roles/${userId}/assignAdmin`,
-                method: Methods.get,
+        addUserAdminRole: builder.mutation<void, string[]>({
+            query: (userIds) => ({
+                url: `${Endpoints.users}roles/assignAdmin`,
+                method: Methods.post,
+                body: userIds,
             }),
             invalidatesTags: ['User'],
         }),
-        deleteUserAdminRole: builder.mutation<void, string>({
-            query: (userId) => ({
-                url: `${Endpoints.users}roles/${userId}/deleteAdmin`,
-                method: Methods.get,
+        deleteUserAdminRole: builder.mutation<void, string[]>({
+            query: (userIds) => ({
+                url: `${Endpoints.users}roles/deleteAdmin`,
+                method: Methods.post,
+                body: userIds,
+            }),
+            invalidatesTags: ['User'],
+        }),
+        deleteUsers: builder.mutation<void, string[]>({
+            query: (userIds) => ({
+                url: `${Endpoints.users}/delete`,
+                method: Methods.delete,
+                body: userIds,
             }),
             invalidatesTags: ['User'],
         }),
@@ -49,4 +59,5 @@ export const {
     useAddUserAdminRoleMutation,
     useDeleteUserAdminRoleMutation,
     useGetUserQuery,
+    useDeleteUsersMutation,
 } = userApiSlice;
