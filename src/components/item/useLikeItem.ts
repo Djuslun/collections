@@ -1,6 +1,8 @@
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { useUpdateItemLikesMutation } from 'store/api/itemApiSlice';
+import useErrorHandle from 'hooks/useErrorHadle';
 import { Item } from 'ts/interfaces';
 
 const useLikeItem = (userId: string | undefined, data: Item | undefined) => {
@@ -9,6 +11,7 @@ const useLikeItem = (userId: string | undefined, data: Item | undefined) => {
         (userId && data?.likes.includes(userId)) || false
     );
     const [updateItem, { isLoading: isLikeLoading }] = useUpdateItemLikesMutation();
+    const handleError = useErrorHandle();
 
     useEffect(() => {
         setIsLiked((userId && data?.likes.includes(userId)) || false);
@@ -29,7 +32,9 @@ const useLikeItem = (userId: string | undefined, data: Item | undefined) => {
             setIsLiked(true);
             setLikesCount((count) => count + 1);
             const newLikesList = [...data.likes, userId];
-            await updateItem({ id: data._id, likesArray: newLikesList });
+            await updateItem({ id: data._id, likesArray: newLikesList })
+                .unwrap()
+                .catch((e: FetchBaseQueryError) => handleError(e));
         }
     };
 
@@ -40,7 +45,9 @@ const useLikeItem = (userId: string | undefined, data: Item | undefined) => {
             setIsLiked(false);
             setLikesCount((count) => count - 1);
             const newLikesList = data.likes.filter((id) => id !== userId);
-            await updateItem({ id: data._id, likesArray: newLikesList });
+            await updateItem({ id: data._id, likesArray: newLikesList })
+                .unwrap()
+                .catch((e: FetchBaseQueryError) => handleError(e));
         }
     };
 

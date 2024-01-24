@@ -142,6 +142,11 @@
                 "name": "Name",
                 "admin": "Admin",
                 "email": "Email"
+            },
+            "error": {
+              "notAdmin": "No admin rights",
+              "notAuth": "Not authorized",
+              "unexpected": "Unexpected server error"
             }
         }
     },
@@ -288,6 +293,11 @@
                 "name": "Имя",
                 "admin": "Администратор",
                 "email": "Эл. почта"
+            },
+            "error": {
+              "notAdmin": "Нет прав администратора",
+              "notAuth": "Вы не авторизованы",
+              "unexpected": "Непредвиденная ошибка сервера"
             }
         }
     }
