@@ -21,10 +21,15 @@
     @apply bg-main rounded-sm;
     }
 
-  .MuiIconButton-root {
-    @apply text-main;
-  }
+    .MuiIconButton-root {
+      @apply text-main;
+    }
+    
+    .MuiDataGrid-booleanCell[data-value="false"],.MuiDataGrid-booleanCell[data-value="true"] {
+      @apply text-main;
+    }
 }
+
 .MuiPaper-root.MuiPaper-elevation {
   @apply bg-main text-main;
 }

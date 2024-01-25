@@ -1,11 +1,23 @@
 import { CustomFieldTypes } from 'ts/types';
 
-type CollectionThemesTypes = 'work' | 'hobby' | 'coins' | 'other' | 'books';
+type CollectionThemesTypes =
+    | 'work'
+    | 'hobby'
+    | 'coins'
+    | 'books'
+    | 'celebrities'
+    | 'movies'
+    | 'stamps'
+    | 'other';
+
 const collectionThemes: CollectionThemesTypes[] = [
     'work',
     'hobby',
     'coins',
     'books',
+    'celebrities',
+    'movies',
+    'stamps',
     'other',
 ];
 
@@ -17,4 +29,4 @@ const customFielsTypes: CustomFieldTypes[] = [
     'date',
 ];
 
-export { customFielsTypes, collectionThemes };
+export { customFielsTypes, collectionThemes, CollectionThemesTypes };
