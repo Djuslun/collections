@@ -7,6 +7,7 @@ import ColorModeButton from './colorModeButton/colorModeButton';
 import LanguageSwitch from './languageSwitch/languageSwitchButton';
 import Nav from './nav/nav';
 import ProfilePageButton from './profilePageButton/profilePageButton';
+import SearchButton from './search/searchMenu';
 
 function Header() {
     const { user } = useAppSelector((store) => store.user);
@@ -20,6 +21,7 @@ function Header() {
                         <Nav />
                     </div>
                     <div className="flex items-center gap-2">
+                        <SearchButton />
                         <LanguageSwitch />
                         <ColorModeButton />
                         <div className="gap-2 hidden lg:flex">

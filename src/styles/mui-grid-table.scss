@@ -38,3 +38,16 @@
     @apply bg-main;
   }
 }
+
+.MuiTabPanel-root  {
+  @apply p-0 pt-4 #{!important};
+}
+
+.MuiTabs-root.tab-styles {
+  .MuiButtonBase-root.MuiTab-root {
+    @apply text-main;
+    &.Mui-selected {
+      @apply text-blue-500;
+    }
+  }
+}

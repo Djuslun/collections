@@ -7,6 +7,7 @@ enum ClientUrls {
     newCollection = '/new-collection',
     newItem = '/new-item',
     admin = '/admin',
+    search = '/search',
 }
 
 enum Endpoints {

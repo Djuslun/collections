@@ -88,7 +88,9 @@
                     "image": "Image",
                     "title": "Title",
                     "likes": "Likes",
-                    "createdAt": "Created at"
+                    "createdAt": "Created at",
+                    "createdBy": "Created by",
+                    "collectionTitle": "Collection"
                 }
             },
             "comment": {
@@ -144,9 +146,15 @@
                 "email": "Email"
             },
             "error": {
-              "notAdmin": "No admin rights",
-              "notAuth": "Not authorized",
-              "unexpected": "Unexpected server error"
+                "notAdmin": "No admin rights",
+                "notAuth": "Not authorized",
+                "unexpected": "Unexpected server error"
+            },
+            "search": {
+                "searchInputPlaceholder": "Find on The Collection",
+                "inItems": "In items",
+                "inCollections": "In collections",
+                "inComments": "In comments"
             }
         }
     },
@@ -239,7 +247,9 @@
                     "image": "Изображение",
                     "title": "Название",
                     "likes": "Лайков",
-                    "createdAt": "Создано"
+                    "createdAt": "Создано",
+                    "createdBy": "Создал(а)",
+                    "collectionTitle": "Коллекция"
                 }
             },
             "comment": {
@@ -295,9 +305,15 @@
                 "email": "Эл. почта"
             },
             "error": {
-              "notAdmin": "Нет прав администратора",
-              "notAuth": "Вы не авторизованы",
-              "unexpected": "Непредвиденная ошибка сервера"
+                "notAdmin": "Нет прав администратора",
+                "notAuth": "Вы не авторизованы",
+                "unexpected": "Непредвиденная ошибка сервера"
+            },
+            "search": {
+                "searchInputPlaceholder": "Найдите на The Collection",
+                "inItems": "В элементах",
+                "inCollections": "В коллекциях",
+                "inComments": "В комментариях"
             }
         }
     }

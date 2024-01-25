@@ -15,6 +15,7 @@ const NewItemPage = lazy(() => import('pages/newItem/newItemPage'));
 const EditCollectionPage = lazy(() => import('pages/editCollection/editCollectiomPage'));
 const EditItemPage = lazy(() => import('pages/editItem/editItemPage'));
 const AdminPage = lazy(() => import('pages/admin/adminPage'));
+const SearchPage = lazy(() => import('pages/search/searchPage'));
 
 function Router() {
     return (
@@ -75,6 +76,7 @@ function Router() {
                         </AdminRoleRequired>
                     }
                 />
+                <Route path={ClientUrls.search} element={<SearchPage />} />
                 <Route path="*" element={<HomePage />} />
             </Routes>
         </Suspense>

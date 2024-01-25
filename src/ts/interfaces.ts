@@ -89,6 +89,12 @@ interface IUser extends User {
     role: TUserRole[];
 }
 
+interface ISearch {
+    inItems: Item[];
+    inCollection: Item[];
+    inComments: Item[];
+}
+
 export type {
     WithChidlren,
     Option,
@@ -97,4 +103,5 @@ export type {
     Collection,
     CollectionRequestBody,
     IUser,
+    ISearch,
 };
