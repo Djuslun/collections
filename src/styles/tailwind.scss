@@ -43,9 +43,13 @@
 }
 
 .info-image {
-  @apply w-36 h-36 rounded-md sm:w-44 sm:h-44;
+  @apply w-36 h-36 rounded-md sm:w-44 sm:h-44 object-contain;
 }
 
 .info-section {
   @apply flex flex-col items-start smm:flex-row smm:items-center gap-5 mb-5;
+}
+
+.title {
+  @apply text-2xl font-bold md:text-4xl xl:text-5xl 2xl:text-6xl mb-2 md:mb-4
 }

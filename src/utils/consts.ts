@@ -1,13 +1,26 @@
-type CollectionThemesTypes = 'work' | 'hobby' | 'coins' | 'other' | 'books';
+import { CustomFieldTypes } from 'ts/types';
+
+type CollectionThemesTypes =
+    | 'work'
+    | 'hobby'
+    | 'coins'
+    | 'books'
+    | 'celebrities'
+    | 'movies'
+    | 'stamps'
+    | 'other';
+
 const collectionThemes: CollectionThemesTypes[] = [
     'work',
     'hobby',
     'coins',
     'books',
+    'celebrities',
+    'movies',
+    'stamps',
     'other',
 ];
 
-type CustomFieldTypes = 'string' | 'textarea' | 'number' | 'boolean' | 'date';
 const customFielsTypes: CustomFieldTypes[] = [
     'string',
     'textarea',
@@ -16,4 +29,4 @@ const customFielsTypes: CustomFieldTypes[] = [
     'date',
 ];
 
-export { customFielsTypes, collectionThemes };
+export { customFielsTypes, collectionThemes, CollectionThemesTypes };

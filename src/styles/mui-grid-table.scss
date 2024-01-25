@@ -1,0 +1,58 @@
+@import './tailwind.scss';
+
+.user-table-row.user-table-row-styles {
+  &:has(.MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within) {
+    @apply outline dark:outline-white outline-black  shadow shadow-sm shadow-gray-500 ;
+  }
+  .MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within  {
+      @apply outline-none ;
+  }
+
+  .MuiDataGrid-cell {
+    @apply py-2;
+  }
+}
+
+.user-table.user-table-styles {
+  .MuiDataGrid-columnHeader:focus-within  {
+    @apply outline-none;
+  }
+  .MuiDataGrid-main {
+    @apply bg-main rounded-sm;
+    }
+
+    .MuiIconButton-root {
+      @apply text-main;
+    }
+    
+    .MuiDataGrid-booleanCell[data-value="false"],.MuiDataGrid-booleanCell[data-value="true"] {
+      @apply text-main;
+    }
+}
+
+.MuiPaper-root.MuiPaper-elevation {
+  @apply bg-main text-main;
+}
+
+.MuiInputBase-input.MuiInput-input, .MuiFormLabel-root.MuiInputLabel-root, .MuiSvgIcon-root  {
+  @apply text-main;
+}
+
+.MuiNativeSelect-select.MuiNativeSelect-standard {
+  option {
+    @apply bg-main;
+  }
+}
+
+.MuiTabPanel-root  {
+  @apply p-0 pt-4 #{!important};
+}
+
+.MuiTabs-root.tab-styles {
+  .MuiButtonBase-root.MuiTab-root {
+    @apply text-main;
+    &.Mui-selected {
+      @apply text-blue-500;
+    }
+  }
+}

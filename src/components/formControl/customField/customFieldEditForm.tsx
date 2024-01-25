@@ -1,24 +1,23 @@
 import { Button } from '@mui/base';
 import AddIcon from '@mui/icons-material/Add';
 import { FieldProps } from 'formik';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ICustomField } from 'ts/interfaces';
+import EmptyState from 'components/emptyStates/emptyState';
 import CustomField from './customField';
-import useCastomFields from './useCustomField';
+import useCustomFields from './useCustomField';
+import useDisableCustomField from './useDisableCustomField';
 
 function CustomFieldEditForm({ field, form }: FieldProps) {
-    const { customFields, addCusromField, changeCustomField, deleteCustomField } =
-        useCastomFields(field.value || []);
     const { t } = useTranslation('translation', { keyPrefix: 'form.collectionForm' });
-    const customFieldsRef = useRef<ICustomField[]>([]);
+
+    const { customFields, addCustomField, changeCustomField, deleteCustomField } =
+        useCustomFields(field.value || []);
     useEffect(() => {
         form.setFieldValue(field.name, customFields);
     }, [customFields]);
 
-    useEffect(() => {
-        customFieldsRef.current = field.value;
-    }, []);
+    const getDisabledStatus = useDisableCustomField(field);
 
     return (
         <div className="flex flex-col ">
@@ -30,25 +29,25 @@ function CustomFieldEditForm({ field, form }: FieldProps) {
                 <Button
                     type="button"
                     className="p-1 flex items-center justify-center border border-gray-300 dark:border-gray-500 rounded-full leading-none bg-control "
-                    onClick={addCusromField}
+                    onClick={addCustomField}
                 >
                     <AddIcon />
                 </Button>
             </div>
             <div className="flex flex-col gap-3">
-                {customFields?.map((field) => (
-                    <CustomField
-                        key={field.id}
-                        handleChange={changeCustomField}
-                        field={field}
-                        handleDelete={deleteCustomField}
-                        edit={
-                            customFieldsRef.current?.some(
-                                (customField) => customField?.id === field.id
-                            ) || false
-                        }
-                    />
-                ))}
+                {customFields.length ? (
+                    customFields?.map((field) => (
+                        <CustomField
+                            key={field.id}
+                            handleChange={changeCustomField}
+                            field={field}
+                            handleDelete={deleteCustomField}
+                            edit={getDisabledStatus(field.id)}
+                        />
+                    ))
+                ) : (
+                    <EmptyState translationKey="customField" />
+                )}
             </div>
         </div>
     );

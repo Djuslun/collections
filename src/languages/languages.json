@@ -4,7 +4,8 @@
             "header": {
                 "nav": {
                     "homePage": "Home",
-                    "collectionsPage": "Collections"
+                    "collectionsPage": "Collections",
+                    "admin": "Admin"
                 },
                 "login": "Log in",
                 "logout": "Log out",
@@ -14,10 +15,16 @@
                 "greetingSection": {
                     "title": "Everything that is important to you is in The Collection",
                     "text": "The Collection app allows you to find collections to suit every taste, as well as create your own!"
-                }
+                },
+                "topCollection": "Top collections",
+                "recentItems": "Recent items"
+            },
+            "collectionPage": {
+                "newItem": "New item"
             },
             "profilePage": {
-                "new-collection": "New collection"
+                "new-collection": "New collection",
+                "myCollection": "My collections"
             },
             "form": {
                 "collectionForm": {
@@ -26,23 +33,43 @@
                     "theme": "Collection theme",
                     "image": "Collection image",
                     "themeSelectPlaceholder": "Select a theme",
-                    "titlePlaceholder": "Enter a title",
                     "customFields": "Custom fields",
                     "addField": "Add custom field",
                     "customFieldLabelPlaceholder": "Field label",
                     "customFieldTypePlaceholder": "Field type",
                     "customFildBrief": "Custom fields can be added to any collection. They define which characteristics will be assigned to each item in the particular collection. The fields can have one of the following types: number, string, text (represented as string value with Markdown formatting), date, boolean (yes or no)."
                 },
+                "itemForm": {
+                    "title": "Item title",
+                    "tags": "Item tags",
+                    "tagsPlaceholder": "Select tags or create your own",
+                    "description": "Item description",
+                    "image": "Item image",
+                    "customFildBrief": "Custom fields have been created for this collection. You can fill them in for this element, or leave empty values for those that you don’t need right now.",
+                    "string": "string",
+                    "number": "number",
+                    "textarea": "text (with Markdown support)",
+                    "boolean": "boolean (yes/no)",
+                    "date": "date",
+                    "yes": "Yes",
+                    "no": "No"
+                },
+                "titlePlaceholder": "Enter a title",
                 "confirm": "Сonfirm",
                 "cancel": "Сancel",
-                "dropZone": "Upload or drop a file right here"
+                "dropZone": "Upload or drop a file right here",
+                "validateRequired": "This field is required",
+                "validateMaxSymbols": "No more than 30 characters"
             },
             "collectionThemes": {
                 "work": "Work",
                 "hobby": "Hobby",
                 "coins": "Coins",
                 "books": "Books",
-                "other": "Other"
+                "other": "Other",
+                "celebrities": "Celebrities",
+                "movies": "Movies",
+                "stamps": "Stamps"
             },
             "customFieldType": {
                 "string": "String",
@@ -57,6 +84,89 @@
                 "createdAt": "at",
                 "delete": "Delete",
                 "edit": "Edit"
+            },
+            "item": {
+                "fromCollection": "From collection",
+                "createdBy": "Created by",
+                "table": {
+                    "image": "Image",
+                    "title": "Title",
+                    "likes": "Likes",
+                    "createdAt": "Created at",
+                    "createdBy": "Created by",
+                    "collectionTitle": "Collection"
+                }
+            },
+            "comment": {
+                "commentFormPlaceholder": "Enter comment",
+                "commented": "commented",
+                "commentedAt": "at"
+            },
+            "emptyState": {
+                "collection": "There is no collections.",
+                "item": "There is no items.",
+                "comment": "There is no comments.",
+                "customField": "There is no custom fields. You can create them"
+            },
+            "tableMenu": {
+                "filterOperatorContains": "Contains",
+                "filterOperatorEquals": "Equals",
+                "filterOperatorStartsWith": "Starts with",
+                "filterOperatorEndsWith": "Ends with",
+                "filterOperatorIs": "Is",
+                "filterOperatorNot": "Is not",
+                "filterOperatorAfter": "Is after",
+                "filterOperatorOnOrAfter": "Is on or after",
+                "filterOperatorBefore": "Is before",
+                "filterOperatorOnOrBefore": "Is on or before",
+                "filterOperatorIsEmpty": "Is empty",
+                "filterOperatorIsNotEmpty": "Is not empty",
+                "filterOperatorIsAnyOf": "Is any of",
+                "columnMenuLabel": "Menu",
+                "columnMenuShowColumns": "Show columns",
+                "columnMenuManageColumns": "Manage columns",
+                "columnMenuFilter": "Filter",
+                "columnMenuHideColumn": "Hide column",
+                "columnMenuUnsort": "Unsort",
+                "columnMenuSortAsc": "Sort by ASC",
+                "columnMenuSortDesc": "Sort by DESC",
+                "filterPanelOperator": "Operator",
+                "filterPanelColumns": "Columns",
+                "filterPanelInputLabel": "Value",
+                "filterPanelInputPlaceholder": "Filter value",
+                "columnHeaderSortIconLabel": "Sort",
+                "columnsPanelTextFieldLabel": "Find column",
+                "columnsPanelTextFieldPlaceholder": "Column title",
+                "columnsPanelDragIconLabel": "Reorder column",
+                "columnsPanelShowAllButton": "Show all",
+                "columnsPanelHideAllButton": "Hide all",
+                "noResultsOverlayLabel": "No results found.",
+                "booleanCellTrueLabel": "Yes",
+                "booleanCellFalseLabel": "No",
+                "filterValueAny": "Any",
+                "filterValueTrue": "Yes",
+                "filterValueFalse": "No"
+            },
+            "userTable": {
+                "avatar": "Avatar",
+                "checkBox": "Checkbox Selection",
+                "nickname": "Nickname",
+                "admin": "Admin",
+                "email": "Email",
+                "addAdmin": "Add admin role",
+                "deleteAdmin": "Delete admin role",
+                "deleteUser": "Delete users"
+            },
+            "error": {
+                "notAdmin": "No admin rights",
+                "notAuth": "Not authorized",
+                "unexpected": "Unexpected server error"
+            },
+            "search": {
+                "searchInputPlaceholder": "Find on The Collection",
+                "inItems": "In items",
+                "inCollections": "In collections",
+                "inComments": "In comments"
             }
         }
     },
@@ -65,7 +175,8 @@
             "header": {
                 "nav": {
                     "homePage": "Главная",
-                    "collectionsPage": "Коллекции"
+                    "collectionsPage": "Коллекции",
+                    "admin": "Администратор"
                 },
                 "login": "Войти",
                 "logout": "Выйти",
@@ -75,10 +186,16 @@
                 "greetingSection": {
                     "title": "Все что важно для вас - в The Collection",
                     "text": "Приложение The Colection позволяет вам найти коллекции на любой вкус, а также создавать свои!"
-                }
+                },
+                "topCollection": "Самые большие коллекции",
+                "recentItems": "Последние добавленные элементы"
+            },
+            "collectionPage": {
+                "newItem": "Новый элемент"
             },
             "profilePage": {
-                "new-collection": "Новая коллекция"
+                "new-collection": "Новая коллекция",
+                "myCollection": "Мои коллекции"
             },
             "form": {
                 "collectionForm": {
@@ -86,7 +203,6 @@
                     "description": "Описание коллекции",
                     "theme": "Тема коллекции",
                     "image": "Изображение коллекции",
-                    "titlePlaceholder": "Введите название",
                     "themeSelectPlaceholder": "Выберите тему",
                     "customFields": "Кастомные поля",
                     "addField": "Добавить поле",
@@ -94,16 +210,37 @@
                     "customFieldTypePlaceholder": "Тип поля",
                     "customFildBrief": "Кастомные поля могут быть добавлены в любую коллекцию. Они определяют, какие характеристики будут присвоены каждому элементу в конкретной коллекции. Поля могут иметь один из следующих типов: число, строка, текст (представленный в виде строкового значения с форматированием разметки Markdown), дата, логическое значение (да или нет)."
                 },
+                "itemForm": {
+                    "title": "Название элемента",
+                    "tags": "Теги элемента",
+                    "tagsPlaceholder": "Выберите теги или создайте свой",
+                    "description": "Описание элемента",
+                    "image": "Изображение элемента",
+                    "customFildBrief": "Для этой коллекции созданы кастомные поля. Вы можете заполнить их для данного элемента, или оставить с пустыми знычениями те, которые вам сейчас не нужны",
+                    "string": "строка",
+                    "number": "число",
+                    "textarea": "текст (с поддержкой разметки Markdown)",
+                    "boolean": "логическое (да/нет)",
+                    "date": "дата",
+                    "yes": "Да",
+                    "no": "Нет"
+                },
+                "titlePlaceholder": "Введите название",
                 "confirm": "Потвердить",
                 "cancel": "Отмена",
-                "dropZone": "Загрузите или перетащите изображение сюда"
+                "dropZone": "Загрузите или перетащите изображение сюда",
+                "validateRequired": "Это поле обязательно",
+                "validateMaxSymbols": "Не больше 30 символов"
             },
             "collectionThemes": {
                 "work": "Работа",
                 "hobby": "Хобби",
                 "coins": "Монеты",
                 "books": "Книги",
-                "other": "Другое"
+                "other": "Другое",
+                "celebrities": "Знаменитости",
+                "movies": "Фильмы",
+                "stamps": "Марки"
             },
             "customFieldType": {
                 "string": "Строка",
@@ -118,6 +255,89 @@
                 "createdAt": "в",
                 "delete": "Удалить",
                 "edit": "Редактировать"
+            },
+            "item": {
+                "fromCollection": "Из коллекции",
+                "createdBy": "Создал(а)",
+                "table": {
+                    "image": "Изображение",
+                    "title": "Название",
+                    "likes": "Лайков",
+                    "createdAt": "Создано",
+                    "createdBy": "Создал(а)",
+                    "collectionTitle": "Коллекция"
+                }
+            },
+            "comment": {
+                "commentFormPlaceholder": "Введите комментарий",
+                "commented": "прокомментировал(а)",
+                "commentedAt": "в"
+            },
+            "emptyState": {
+                "collection": "Коллекций нет. Но вы держитесь там)",
+                "item": "Элементов пока еще нет. Но вы можете их создать ",
+                "comment": "Комментариев пока еще нет.",
+                "customField": "Кастомных полей пока нет. Вы сожете их создать"
+            },
+            "tableMenu": {
+                "filterOperatorContains": "Содержит",
+                "filterOperatorEquals": "Равно",
+                "filterOperatorStartsWith": "Начинается с",
+                "filterOperatorEndsWith": "Заканчивается на",
+                "filterOperatorIs": "Равно",
+                "filterOperatorNot": "Не",
+                "filterOperatorAfter": "После",
+                "filterOperatorOnOrAfter": "Равно или после",
+                "filterOperatorBefore": "До",
+                "filterOperatorOnOrBefore": "Равно или до",
+                "filterOperatorIsEmpty": "Пустое",
+                "filterOperatorIsNotEmpty": "Не пустое",
+                "filterOperatorIsAnyOf": "Любое из",
+                "columnMenuLabel": "Меню",
+                "columnMenuShowColumns": "Показать колонки",
+                "columnMenuManageColumns": "Управлять колонками",
+                "columnMenuFilter": "Фильтр",
+                "columnMenuHideColumn": "Спрятать колонку",
+                "columnMenuUnsort": "Без сортировки",
+                "columnMenuSortAsc": "По возрастанию",
+                "columnMenuSortDesc": "По убыванию",
+                "filterPanelOperator": "Оператор",
+                "filterPanelColumns": "Колонки",
+                "filterPanelInputLabel": "Значение",
+                "filterPanelInputPlaceholder": "Значение фильтра",
+                "columnHeaderSortIconLabel": "Сортировать",
+                "columnsPanelTextFieldLabel": "Найти колонку",
+                "columnsPanelTextFieldPlaceholder": "Название колонки",
+                "columnsPanelDragIconLabel": "Reorder column",
+                "columnsPanelShowAllButton": "Показать все",
+                "columnsPanelHideAllButton": "Спрятать все",
+                "noResultsOverlayLabel": "Результаты не найдены.",
+                "booleanCellTrueLabel": "Да",
+                "booleanCellFalseLabel": "Нет",
+                "filterValueAny": "Любое",
+                "filterValueTrue": "Да",
+                "filterValueFalse": "Нет"
+            },
+            "userTable": {
+                "avatar": "Аватар",
+                "checkBox": "Выбор чек-боксами",
+                "nickname": "Ник",
+                "admin": "Администратор",
+                "email": "Эл. почта",
+                "addAdmin": "Добавить роль администратора",
+                "deleteAdmin": "Удалить роль администратора",
+                "deleteUser": "Удалить пользователей"
+            },
+            "error": {
+                "notAdmin": "Нет прав администратора",
+                "notAuth": "Вы не авторизованы",
+                "unexpected": "Непредвиденная ошибка сервера"
+            },
+            "search": {
+                "searchInputPlaceholder": "Найдите на The Collection",
+                "inItems": "В элементах",
+                "inCollections": "В коллекциях",
+                "inComments": "В комментариях"
             }
         }
     }

@@ -1,25 +1,25 @@
-import { useAuth0 } from '@auth0/auth0-react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useAppSelector } from 'store/useRedux';
 import CollectiomEditForm from 'components/collectionEditForm/collectionEditForm';
-import { ClientUrls } from 'ts/enums';
+import DataRequired from 'components/dataRequired/dataRequiredWrapper';
+import { CollectionFormValues } from 'ts/interfaces';
 import useUpdateCollection from './useUpdateCollection';
 
 function EditCollectionPage() {
-    const { user } = useAuth0();
+    const { user } = useAppSelector((store) => store.user);
     const { state } = useLocation();
-
-    if (!user) {
-        return <Navigate to={ClientUrls.homePage} />;
-    }
-
     const { handleUpdate, isUpdating } = useUpdateCollection(state, user.sub as string);
 
     return (
-        <CollectiomEditForm
-            handleSubmit={handleUpdate}
-            initialValues={state}
-            isLoading={isUpdating}
-        />
+        <DataRequired data={state as CollectionFormValues} isSuccess>
+            {(collection) => (
+                <CollectiomEditForm
+                    handleSubmit={handleUpdate}
+                    initialValues={collection}
+                    isLoading={isUpdating}
+                />
+            )}
+        </DataRequired>
     );
 }
 

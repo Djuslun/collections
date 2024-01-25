@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAppSelector } from 'store/useRedux';
 import Logo from 'components/logo/logo';
 import Container from 'ui/container';
 import AuthButton from './authButton/authButton';
@@ -7,9 +7,10 @@ import ColorModeButton from './colorModeButton/colorModeButton';
 import LanguageSwitch from './languageSwitch/languageSwitchButton';
 import Nav from './nav/nav';
 import ProfilePageButton from './profilePageButton/profilePageButton';
+import SearchButton from './search/searchMenu';
 
 function Header() {
-    const { isAuthenticated } = useAuth0();
+    const { user } = useAppSelector((store) => store.user);
 
     return (
         <header className="bg-main border-b border-gray-400 shadow-md shadow-slate-400 py-2">
@@ -20,10 +21,11 @@ function Header() {
                         <Nav />
                     </div>
                     <div className="flex items-center gap-2">
+                        <SearchButton />
                         <LanguageSwitch />
                         <ColorModeButton />
-                        <div className="gap-2 hidden md:flex">
-                            {isAuthenticated && <ProfilePageButton />}
+                        <div className="gap-2 hidden lg:flex">
+                            {user?.sub && <ProfilePageButton />}
                             <AuthButton />
                         </div>
                         <BurgerMenu />

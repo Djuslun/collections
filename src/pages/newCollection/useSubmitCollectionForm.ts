@@ -1,5 +1,7 @@
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useNavigate } from 'react-router-dom';
 import { useCreateCollectionMutation } from 'store/api/collectionApiSlice';
+import useErrorHandle from 'hooks/useErrorHadle';
 import useImageUpload from 'hooks/useImageUpload';
 import { ClientUrls } from 'ts/enums';
 import { THandleSubmitCollectionForm } from 'ts/types';
@@ -16,6 +18,7 @@ const useSubmitCollectionForm = (
     const { uploadImage, isLoading: isImageLoading } = useImageUpload();
     const [createCollection, { isLoading: isCollectionCreating }] =
         useCreateCollectionMutation();
+    const handleError = useErrorHandle();
     const navigate = useNavigate();
     const isLoading = isImageLoading || isCollectionCreating;
 
@@ -33,7 +36,9 @@ const useSubmitCollectionForm = (
             customFields: customFields.filter((field) => field.label && field.type),
         };
 
-        createCollection(collection).unwrap();
+        createCollection(collection)
+            .unwrap()
+            .catch((e: FetchBaseQueryError) => handleError(e));
         navigate(ClientUrls.profile);
     };
 

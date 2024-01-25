@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ClientUrls } from 'ts/enums';
 import { Collection } from 'ts/interfaces';
+import CollectionTheme from './collectionTheme';
 
 function CollectionCard({ collection }: { collection: Collection }) {
     const date = new Date(collection.createdAt).toLocaleString().split(',');
@@ -20,9 +21,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
                 <div className="">
                     <div className="p-2">
                         <h2 className="text-3xl font-bold mb-1">{collection.title}</h2>
-                        <p className="bg-rose-400 inline-block px-2 p-1 rounded-sm mb-2 hover:scale-110 transition-all">
-                            {collection.collectionTheme}
-                        </p>
+                        <CollectionTheme theme={collection.collectionTheme} />
                         <p>
                             {`${t('itemCount')}`}: {collection.itemCount}
                         </p>

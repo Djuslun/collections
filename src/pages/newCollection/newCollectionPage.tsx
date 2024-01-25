@@ -1,7 +1,5 @@
-import { useAuth0 } from '@auth0/auth0-react';
-import { Navigate } from 'react-router-dom';
+import { useAppSelector } from 'store/useRedux';
 import CollectiomEditForm from 'components/collectionEditForm/collectionEditForm';
-import { ClientUrls } from 'ts/enums';
 import { CollectionFormValues } from 'ts/interfaces';
 import useSubmitCollectionForm from './useSubmitCollectionForm';
 
@@ -14,10 +12,7 @@ const initialValues: CollectionFormValues = {
 };
 
 function NewCollectionPage() {
-    const { user } = useAuth0();
-    if (!user) {
-        return <Navigate to={ClientUrls.homePage} />;
-    }
+    const { user } = useAppSelector((store) => store.user);
     const { handleSubmit, isLoading } = useSubmitCollectionForm(
         user.sub as string,
         user.nickname as string
