@@ -36,6 +36,11 @@ const useLocalTextTable = () => {
         columnsPanelShowAllButton: t('columnsPanelShowAllButton'),
         columnsPanelHideAllButton: t('columnsPanelHideAllButton'),
         noResultsOverlayLabel: t('noResultsOverlayLabel'),
+        booleanCellTrueLabel: t('booleanCellTrueLabel'),
+        booleanCellFalseLabel: t('booleanCellFalseLabel'),
+        filterValueAny: t('filterValueAny'),
+        filterValueTrue: t('filterValueTrue'),
+        filterValueFalse: t('filterValueFalse'),
     };
 
     return localText;

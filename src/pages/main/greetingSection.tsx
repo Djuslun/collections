@@ -6,7 +6,7 @@ function GreetingSection() {
     });
 
     return (
-        <section className="py-4 grid md:grid-cols-3">
+        <section className=" grid md:grid-cols-3">
             <div className="col-start-1 col-end-3">
                 <h1 className="title">{t('title')}</h1>
                 <p className="lg:text-lg xl:text-2xl">{t('text')}</p>

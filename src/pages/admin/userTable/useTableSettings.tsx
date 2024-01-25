@@ -32,8 +32,8 @@ const useTableSettings = () => {
             sortable: false,
         },
         {
-            field: 'name',
-            headerName: t('name'),
+            field: 'nickname',
+            headerName: t('nickname'),
             flex: 1,
             minWidth: 200,
             hideable: false,

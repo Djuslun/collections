@@ -16,7 +16,8 @@
                     "title": "Everything that is important to you is in The Collection",
                     "text": "The Collection app allows you to find collections to suit every taste, as well as create your own!"
                 },
-                "topCollection": "Top collections"
+                "topCollection": "Top collections",
+                "recentItems": "Recent items"
             },
             "collectionPage": {
                 "newItem": "New item"
@@ -136,14 +137,22 @@
                 "columnsPanelDragIconLabel": "Reorder column",
                 "columnsPanelShowAllButton": "Show all",
                 "columnsPanelHideAllButton": "Hide all",
-                "noResultsOverlayLabel": "No results found."
+                "noResultsOverlayLabel": "No results found.",
+                "booleanCellTrueLabel": "Yes",
+                "booleanCellFalseLabel": "No",
+                "filterValueAny": "Any",
+                "filterValueTrue": "Yes",
+                "filterValueFalse": "No"
             },
             "userTable": {
                 "avatar": "Avatar",
                 "checkBox": "Checkbox Selection",
-                "name": "Name",
+                "nickname": "Nickname",
                 "admin": "Admin",
-                "email": "Email"
+                "email": "Email",
+                "addAdmin": "Add admin role",
+                "deleteAdmin": "Delete admin role",
+                "deleteUser": "Delete users"
             },
             "error": {
                 "notAdmin": "No admin rights",
@@ -175,7 +184,8 @@
                     "title": "Все что важно для вас - в The Collection",
                     "text": "Приложение The Colection позволяет вам найти коллекции на любой вкус, а также создавать свои!"
                 },
-                "topCollection": "Самые большие коллекции"
+                "topCollection": "Самые большие коллекции",
+                "recentItems": "Последние добавленные элементы"
             },
             "collectionPage": {
                 "newItem": "Новый элемент"
@@ -295,14 +305,22 @@
                 "columnsPanelDragIconLabel": "Reorder column",
                 "columnsPanelShowAllButton": "Показать все",
                 "columnsPanelHideAllButton": "Спрятать все",
-                "noResultsOverlayLabel": "Результаты не найдены."
+                "noResultsOverlayLabel": "Результаты не найдены.",
+                "booleanCellTrueLabel": "Да",
+                "booleanCellFalseLabel": "Нет",
+                "filterValueAny": "Любое",
+                "filterValueTrue": "Да",
+                "filterValueFalse": "Нет"
             },
             "userTable": {
                 "avatar": "Аватар",
                 "checkBox": "Выбор чек-боксами",
-                "name": "Имя",
+                "nickname": "Ник",
                 "admin": "Администратор",
-                "email": "Эл. почта"
+                "email": "Эл. почта",
+                "addAdmin": "Добавить роль администратора",
+                "deleteAdmin": "Удалить роль администратора",
+                "deleteUser": "Удалить пользователей"
             },
             "error": {
                 "notAdmin": "Нет прав администратора",
