@@ -7,7 +7,7 @@ function Nav() {
     const { t } = useTranslation('translation', { keyPrefix: 'header.nav' });
     const { isAdmin } = useAppSelector((store) => store.user);
     const activeClass = ({ isActive }: { isActive: boolean }): string =>
-        `${isActive ? 'text-blue-600' : ''} nav-link`;
+        `${isActive ? 'nav-link--active' : ''} nav-link`;
 
     return (
         <nav className="hidden lg:flex items-center gap-2 ">

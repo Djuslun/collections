@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply focus-visible:outline-offset-4 focus-visible:outline-4 focus-visible:outline-blue-600 dark:focus-visible:outline-gray-200;
+}
+
 .border-with-shadow {
     @apply border border-gray-300  rounded-md shadow-sm shadow-slate-300 dark:border-gray-500;
 }
@@ -11,7 +15,7 @@
 }
 
 .button {
-    @apply p-2 bg-control border-with-shadow;
+    @apply p-2 bg-control border-with-shadow hover:bg-slate-100 dark:bg-gray-800 transition-all;
 }
 
 .text-main {
@@ -23,7 +27,11 @@
 }
 
 .nav-link {
-    @apply text-xl lg:text-2xl;
+    @apply text-xl lg:text-2xl hover:text-gray-600 dark:text-slate-100 transition-all;
+}
+
+.nav-link--active {
+  @apply text-blue-600 hover:text-blue-800;
 }
 
 .burger-menu-link {
