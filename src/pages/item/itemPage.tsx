@@ -2,7 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useGetItemByIdQuery } from 'store/api/itemApiSlice';
 import { useAppSelector } from 'store/useRedux';
 import DataRequired from 'components/dataRequired/dataRequiredWrapper';
+import ItemCustomFieldList from 'components/item/itemCustomFields/itemCustomFieldList';
 import ItemInfo from 'components/item/itemInfo';
+import TagList from 'components/item/tag/tagList';
 import OwnerEntitiOnly from 'components/ownerEntityOnly/ownerEntityOnly';
 import { Item } from 'ts/interfaces';
 import Collapse from 'ui/collapse';
@@ -24,6 +26,8 @@ function ItemPage() {
                     {(item) => (
                         <>
                             <ItemInfo item={item} />
+                            <TagList tagIds={item.tags} />
+                            <ItemCustomFieldList customFields={item.customFields} />
                             <ItemCommentList itemId={id} />
                             <OwnerEntitiOnly
                                 userId={user?.sub}

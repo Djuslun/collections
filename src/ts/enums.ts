@@ -8,6 +8,7 @@ enum ClientUrls {
     newItem = '/new-item',
     admin = '/admin',
     search = '/search',
+    searchTag = '/tag',
 }
 
 enum Endpoints {

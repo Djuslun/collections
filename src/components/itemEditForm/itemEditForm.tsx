@@ -13,7 +13,7 @@ import {
     TBaseComponent,
     TCreatableSelectComponent,
 } from 'components/formControl/types';
-import { ItemFormValues, Tag } from 'ts/interfaces';
+import { ITag, ItemFormValues } from 'ts/interfaces';
 import { THandleSubmitItemForm } from 'ts/types';
 import FormButtons from 'ui/formButtons/formButtons';
 import Loader from 'ui/loader/loader';
@@ -65,7 +65,7 @@ function ItemEditForm({
                                 name="tags"
                                 id="tags"
                                 component={FormikCreatebleSelect}
-                                options={(options as Tag[]) || []}
+                                options={(options as ITag[]) || []}
                                 placeholder={t('itemForm.tagsPlaceholder')}
                             />
                             <FormikField<IInputFormikField<TBaseComponent>>

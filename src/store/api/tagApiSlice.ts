@@ -1,32 +1,24 @@
 import { Endpoints, Methods } from 'ts/enums';
-import { Tag } from 'ts/interfaces';
+import { ITag } from 'ts/interfaces';
 import api from './apiSlice';
 
 export const itemApiSlice = api.injectEndpoints({
     endpoints: (builder) => ({
-        getAllTags: builder.query<Tag[], void>({
+        getAllTags: builder.query<ITag[], void>({
             query: () => ({
                 url: `${Endpoints.tags}`,
                 method: Methods.get,
             }),
             providesTags: ['Tag'],
         }),
-        getTagsByIdsArray: builder.query<Tag[], string[]>({
-            query: (ids: string[]) => ({
-                url: `${Endpoints.tags}item`,
-                method: Methods.get,
-                body: ids,
-            }),
-            providesTags: ['Tag'],
-        }),
-        getTagById: builder.query<Tag, string>({
+        getTagById: builder.query<ITag, string>({
             query: (tagId: string) => ({
                 url: `${Endpoints.tags}${tagId}`,
                 method: Methods.get,
             }),
             providesTags: ['Tag'],
         }),
-        createTag: builder.mutation<Tag[], string[]>({
+        createTag: builder.mutation<ITag[], string[]>({
             query: (tags: string[]) => ({
                 url: `${Endpoints.tags}new`,
                 method: Methods.post,
@@ -34,7 +26,7 @@ export const itemApiSlice = api.injectEndpoints({
             }),
             invalidatesTags: ['Tag', 'Item'],
         }),
-        deleteTag: builder.mutation<Tag, string>({
+        deleteTag: builder.mutation<ITag, string>({
             query: (tagId: string) => ({
                 url: `${Endpoints.tags}${tagId}`,
                 method: Methods.delete,
@@ -49,5 +41,4 @@ export const {
     useCreateTagMutation,
     useDeleteTagMutation,
     useGetTagByIdQuery,
-    useGetTagsByIdsArrayQuery,
 } = itemApiSlice;

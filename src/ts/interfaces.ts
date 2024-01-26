@@ -17,7 +17,7 @@ interface Option {
     label: string;
 }
 
-export interface Tag extends Option, Pick<DatabaseModel, '_id'> {}
+ interface ITag extends Option, Pick<DatabaseModel, '_id'> {}
 
 interface ICustomField {
     id: string;
@@ -104,4 +104,5 @@ export type {
     CollectionRequestBody,
     IUser,
     ISearch,
+    ITag,
 };

@@ -17,7 +17,8 @@
                     "text": "The Collection app allows you to find collections to suit every taste, as well as create your own!"
                 },
                 "topCollection": "Top collections",
-                "recentItems": "Recent items"
+                "recentItems": "Recent items",
+                "tagsCloud": "May be interesting for you"
             },
             "collectionPage": {
                 "newItem": "New item"
@@ -188,7 +189,8 @@
                     "text": "Приложение The Colection позволяет вам найти коллекции на любой вкус, а также создавать свои!"
                 },
                 "topCollection": "Самые большие коллекции",
-                "recentItems": "Последние добавленные элементы"
+                "recentItems": "Последние добавленные элементы",
+                "tagsCloud": "Может быть интересно для вас"
             },
             "collectionPage": {
                 "newItem": "Новый элемент"

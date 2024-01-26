@@ -2,7 +2,7 @@
 
 .user-table-row.user-table-row-styles {
   &:has(.MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within) {
-    @apply outline dark:outline-white outline-black  shadow shadow-sm shadow-gray-500 ;
+    @apply dark:bg-gray-700 bg-slate-300;
   }
   .MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within  {
       @apply outline-none ;
@@ -14,6 +14,10 @@
 }
 
 .user-table.user-table-styles {
+  &:has(.MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within) {
+    @apply outline outline-offset-4 outline-4 outline-blue-600 dark:outline-gray-200;
+  }
+
   .MuiDataGrid-columnHeader:focus-within  {
     @apply outline-none;
   }

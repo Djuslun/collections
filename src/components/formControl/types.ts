@@ -1,5 +1,5 @@
 import { FieldProps } from 'formik';
-import { Option, Tag } from 'ts/interfaces';
+import { ITag, Option } from 'ts/interfaces';
 
 interface ISelectProps
     extends FieldProps,
@@ -38,7 +38,7 @@ interface ISelectFormikField<T> extends ISelectFormikFieldBase<T> {
 }
 
 interface ICreatebleSelectFormikField<T> extends ISelectFormikFieldBase<T> {
-    options: Tag[];
+    options: ITag[];
 }
 
 export type {

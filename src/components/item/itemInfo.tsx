@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import { useAppSelector } from 'store/useRedux';
 import { ClientUrls } from 'ts/enums';
 import { Item } from 'ts/interfaces';
-import ItemCustomField from './itemCustomField';
 import ItemLike from './itemLike';
 
 function ItemInfo({ item }: { item: Item }) {
     const { t } = useTranslation('translation', { keyPrefix: 'item' });
-    const { user } = useAppSelector(store => store.user);
+    const { user } = useAppSelector((store) => store.user);
 
     return (
         <section>
@@ -38,13 +37,6 @@ function ItemInfo({ item }: { item: Item }) {
                     </div>
                 </div>
             </div>
-            <ul className="flex flex-col gap-2 border-y border-gray-400 py-2">
-                {item.customFields.map((field) => (
-                    <li key={field.id}>
-                        <ItemCustomField {...field} />
-                    </li>
-                ))}
-            </ul>
         </section>
     );
 }
