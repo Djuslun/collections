@@ -5,7 +5,7 @@ function EmptyState({ translationKey }: { translationKey: string }) {
         keyPrefix: 'emptyState',
     });
 
-    return <p className="lg:text-lg xl:text-2xl">{t(translationKey)}</p>;
+    return <p className="lg:text-lg xl:text-2xl mb-4">{t(translationKey)}</p>;
 }
 
 export default EmptyState;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import CreatableSelect from 'react-select/creatable';
-import { Tag } from 'ts/interfaces';
+import { ITag } from 'ts/interfaces';
 import { ICreatableSelectProps } from './types';
 
 function FormikCreatebleSelect({
@@ -11,7 +11,7 @@ function FormikCreatebleSelect({
 }: ICreatableSelectProps) {
     const [selectOptions, setSelectOptions] = useState(options);
 
-    const getValue = (options: Tag[], ids: string[]) =>
+    const getValue = (options: ITag[], ids: string[]) =>
         options.filter((tag) => ids.includes(tag._id));
 
     const handleCreate = (option: string) => {

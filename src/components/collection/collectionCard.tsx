@@ -15,7 +15,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
                     <img
                         src={collection.imageUrl}
                         alt="collection_image"
-                        className="w-full object-contain aspect-square"
+                        className="w-full object-cover aspect-square"
                     />
                 </div>
                 <div className="">

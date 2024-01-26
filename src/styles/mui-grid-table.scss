@@ -2,7 +2,7 @@
 
 .user-table-row.user-table-row-styles {
   &:has(.MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within) {
-    @apply outline dark:outline-white outline-black  shadow shadow-sm shadow-gray-500 ;
+    @apply dark:bg-gray-700 bg-slate-300;
   }
   .MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within  {
       @apply outline-none ;
@@ -14,6 +14,10 @@
 }
 
 .user-table.user-table-styles {
+  &:has(.MuiDataGrid-cell:focus,.MuiDataGrid-columnHeader:focus, .MuiDataGrid-columnHeader:focus-within) {
+    @apply outline outline-offset-4 outline-4 outline-blue-600 dark:outline-gray-200;
+  }
+
   .MuiDataGrid-columnHeader:focus-within  {
     @apply outline-none;
   }
@@ -31,7 +35,18 @@
 }
 
 .MuiPaper-root.MuiPaper-elevation {
-  @apply bg-main text-main;
+  @apply bg-main text-main bg-[length:200px_100px];
+}
+
+.MuiPaper-root.MuiPaper-elevation::after  {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%; 
+  width: 100%; 
+  z-index: -1;
+  @apply bg-main;
 }
 
 .MuiInputBase-input.MuiInput-input, .MuiFormLabel-root.MuiInputLabel-root, .MuiSvgIcon-root  {
@@ -54,5 +69,19 @@
     &.Mui-selected {
       @apply text-blue-500;
     }
+  }
+}
+
+.MuiPopper-root.MuiDataGrid-panel {
+  @apply overflow-x-scroll sm:overflow-x-auto max-w-[300px] sm:max-w-full #{!important};
+}
+
+.css-154sxbz-MuiPaper-root-MuiDataGrid-paper {
+  @apply shadow-none #{!important};
+}
+
+.MuiDataGrid-filterForm {
+  * {
+    @apply text-sm sm:text-base #{!important};
   }
 }

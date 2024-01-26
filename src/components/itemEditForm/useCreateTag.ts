@@ -1,9 +1,9 @@
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { useCreateTagMutation } from 'store/api/tagApiSlice';
 import useErrorHandle from 'hooks/useErrorHadle';
-import { Tag } from 'ts/interfaces';
+import { ITag } from 'ts/interfaces';
 
-const useCreateTag = (options: Tag[] | undefined) => {
+const useCreateTag = (options: ITag[] | undefined) => {
     const [createTag, { isLoading: isTagsCreating }] = useCreateTagMutation();
     const handleError = useErrorHandle();
 
@@ -20,7 +20,7 @@ const useCreateTag = (options: Tag[] | undefined) => {
         const createdTag = newTags.length
             ? ((await createTag(newTags)
                   .unwrap()
-                  .catch((e: FetchBaseQueryError) => handleError(e))) as Tag[])
+                  .catch((e: FetchBaseQueryError) => handleError(e))) as ITag[])
             : [];
 
         return [...oldTags, ...createdTag.map((tag) => tag._id)];

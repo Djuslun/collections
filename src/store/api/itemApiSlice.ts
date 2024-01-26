@@ -19,6 +19,13 @@ export const itemApiSlice = apiSlice.injectEndpoints({
             }),
             providesTags: ['Item'],
         }),
+        getItemsByTagId: builder.query<Item[], string>({
+            query: (tagId: string) => ({
+                url: `${Endpoints.items}tag/${tagId}`,
+                method: Methods.get,
+            }),
+            providesTags: ['Item'],
+        }),
         getRecentItems: builder.query<Item[], void>({
             query: () => ({
                 url: `${Endpoints.items}recent`,
@@ -68,4 +75,5 @@ export const {
     useUpdateItemMutation,
     useUpdateItemLikesMutation,
     useGetRecentItemsQuery,
+    useLazyGetItemsByTagIdQuery
 } = itemApiSlice;
